@@ -1,8 +1,10 @@
-import { message } from './helper.js';
 import express from 'express';
+import Product from './models/productModel.js';
 
 export const app = express();
 
-app.get('/api/home', (req, res) => {
-  res.json({ message });
+app.get('/api/home', async (req, res) => {
+  const data = await Product.find();
+
+  res.status(200).json({ status: 'succes', data });
 });
