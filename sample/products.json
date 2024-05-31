@@ -16,15 +16,6 @@
     "gender": "men"
   },
   {
-    "name": "Ocean Breeze Scarf",
-    "slug": "ocean-breeze-scarf",
-    "images": [],
-    "description": "A lightweight and airy scarf perfect for adding a touch of style to any outfit. This eco-friendly accessory is made without any plastic.",
-    "price": 24.99,
-    "sizes": [{ "name": "One Size", "amount": 30 }],
-    "gender": "men"
-  },
-  {
     "name": "Mountain Explorer Jacket",
     "slug": "mountain-explorer-jacket",
     "images": [],

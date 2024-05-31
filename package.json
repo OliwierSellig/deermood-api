@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "tsc --noEmit && tsx watch src/server.ts"
+    "start": "tsc --noEmit && tsx watch src/server.ts",
+    "deleteSample": "tsx sample/import-sample-data.ts --delete",
+    "refetchSample": "tsx sample/import-sample-data.ts --import"
   },
   "author": "Oliwier Sellig",
   "license": "ISC",
