@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Sunrise Lounge Pants",
+    "slug": "sunrise-lounge-pants",
+    "images": [],
+    "description": "Comfortable lounge pants perfect for relaxing at home. These pants are breathable, soft, and completely plastic-free.",
+    "price": 34.99,
+    "sizes": [
+      { "name": "XS", "amount": 12 },
+      { "name": "S", "amount": 18 },
+      { "name": "M", "amount": 22 },
+      { "name": "L", "amount": 16 },
+      { "name": "XL", "amount": 10 },
+      { "name": "XXL", "amount": 5 }
+    ],
+    "gender": "men"
+  },
+  {
+    "name": "Ocean Breeze Scarf",
+    "slug": "ocean-breeze-scarf",
+    "images": [],
+    "description": "A lightweight and airy scarf perfect for adding a touch of style to any outfit. This eco-friendly accessory is made without any plastic.",
+    "price": 24.99,
+    "sizes": [{ "name": "One Size", "amount": 30 }],
+    "gender": "men"
+  },
+  {
+    "name": "Mountain Explorer Jacket",
+    "slug": "mountain-explorer-jacket",
+    "images": [],
+    "description": "A durable and stylish jacket for outdoor adventures. This jacket is designed to keep you warm and is completely plastic-free.",
+    "price": 79.99,
+    "sizes": [
+      { "name": "XS", "amount": 6 },
+      { "name": "S", "amount": 10 },
+      { "name": "M", "amount": 14 },
+      { "name": "L", "amount": 12 },
+      { "name": "XL", "amount": 8 },
+      { "name": "XXL", "amount": 4 }
+    ],
+    "gender": "men"
+  },
+  {
+    "name": "Forest Trail Hoodie",
+    "slug": "forest-trail-hoodie",
+    "images": [],
+    "description": "Stay warm and cozy with this eco-friendly hoodie. Perfect for outdoor adventures and made without any plastic.",
+    "price": 69.99,
+    "sizes": [
+      { "name": "XS", "amount": 8 },
+      { "name": "S", "amount": 10 },
+      { "name": "M", "amount": 15 },
+      { "name": "L", "amount": 12 },
+      { "name": "XL", "amount": 9 },
+      { "name": "XXL", "amount": 6 }
+    ],
+    "gender": "men"
+  },
+  {
+    "name": "Urban Nomad Shirt",
+    "slug": "urban-nomad-shirt",
+    "images": [],
+    "description": "A stylish shirt perfect for city living. Made with sustainable materials and completely free of plastic.",
+    "price": 44.99,
+    "sizes": [
+      { "name": "XS", "amount": 8 },
+      { "name": "S", "amount": 12 },
+      { "name": "M", "amount": 18 },
+      { "name": "L", "amount": 14 },
+      { "name": "XL", "amount": 10 },
+      { "name": "XXL", "amount": 6 }
+    ],
+    "gender": "men"
+  },
+  {
+    "name": "Evergreen Pullover",
+    "slug": "evergreen-pullover",
+    "images": [],
+    "description": "Stay cozy with this eco-friendly pullover. Perfect for cooler weather and made with sustainable materials.",
+    "price": 49.99,
+    "sizes": [
+      { "name": "XS", "amount": 10 },
+      { "name": "S", "amount": 12 },
+      { "name": "M", "amount": 18 },
+      { "name": "L", "amount": 14 },
+      { "name": "XL", "amount": 10 },
+      { "name": "XXL", "amount": 5 }
+    ],
+    "gender": "men"
+  },
+  {
+    "name": "Midnight Wanderer Pants",
+    "slug": "midnight-wanderer-pants",
+    "images": [],
+    "description": "Stylish and comfortable pants perfect for any adventure. These eco-friendly pants are made without any plastic.",
+    "price": 34.99,
+    "sizes": [
+      { "name": "XS", "amount": 10 },
+      { "name": "S", "amount": 14 },
+      { "name": "M", "amount": 18 },
+      { "name": "L", "amount": 12 },
+      { "name": "XL", "amount": 8 },
+      { "name": "XXL", "amount": 5 }
+    ],
+    "gender": "men"
+  }
+]
