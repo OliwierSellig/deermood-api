@@ -1,8 +1,12 @@
 import express from 'express';
 import Product from './models/productModel.js';
 import productRouter from './routes/productRoutes.js';
+import AppError from './utils/appError.js';
+import globalErrorHandler from './controllers/erorrController.js';
 
 export const app = express();
+
+app.use(express.json({ limit: '10kb' }));
 
 app.get('/api/home', async (req, res) => {
   const data = await Product.find();
@@ -13,10 +17,7 @@ app.get('/api/home', async (req, res) => {
 app.use('/api/v1/products', productRouter);
 
 app.all('*', (req, res, next) => {
-  res
-    .status(404)
-    .json({
-      status: 'fail',
-      message: `Can't find ${req.originalUrl} on this server!`,
-    });
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
+
+app.use(globalErrorHandler);

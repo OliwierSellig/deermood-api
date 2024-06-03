@@ -1,9 +1,11 @@
 import express from 'express';
+import {
+  createProduct,
+  getAllProducts,
+} from '../controllers/productController.js';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.status(200).json({ message: 'Hello From Product Route!' });
-});
+router.route('/').get(getAllProducts).post(createProduct);
 
 export default router;

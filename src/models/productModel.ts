@@ -5,7 +5,7 @@ const requiredSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: [true, 'Product must have a name.'],
+    required: [true, 'Product must have a name.'],
     unique: true,
     trim: true,
     maxlength: [40, 'Product name must have less or equal then 40 characters'],
@@ -15,19 +15,22 @@ const productSchema = new mongoose.Schema({
   images: [String],
   gender: {
     type: String,
-    require: [true, 'Product must have a gender.'],
+    required: [true, 'Product must have a gender.'],
     enum: {
-      values: ['men', 'women', 'unisex'],
-      message: 'Gender must be either: men, women or unisex ',
+      values: ['male', 'female', 'unisex'],
+      message: 'Gender must be either: male, female or unisex ',
     },
   },
   description: {
     type: String,
-    require: [true, 'Product must have a description.'],
-    minlength: [40, 'Product name must have more or equal then 40 characters'],
+    required: [true, 'Product must have a description.'],
+    minlength: [
+      40,
+      'Product description must have more or equal then 40 characters',
+    ],
     maxlength: [
       520,
-      'Product name must have less or equal then 520 characters',
+      'Product description must have less or equal then 520 characters',
     ],
   },
   price: { type: Number, required: [true, 'Product must have a price.'] },
@@ -35,7 +38,7 @@ const productSchema = new mongoose.Schema({
     {
       name: {
         type: String,
-        require: [true, 'A size must have a name.'],
+        required: [true, 'A size must have a name.'],
         enum: {
           values: requiredSizes,
           message: 'Size must be either: XS, S, M, L, XL, XXL',
@@ -43,7 +46,7 @@ const productSchema = new mongoose.Schema({
       },
       amount: {
         type: Number,
-        require: [true, 'A size must have an amount.'],
+        required: [true, 'A size must have an amount.'],
         min: [0, 'Amount must be a positive number.'],
       },
     },
