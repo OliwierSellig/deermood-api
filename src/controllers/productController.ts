@@ -1,13 +1,24 @@
 import Product from '../models/productModel.js';
+import APIFeatures from '../utils/apiFeatures.js';
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
+import { QueryString } from '../utils/types.js';
 
 // ----------------------- Getting All Products ----------------------------
 
 export const getAllProducts = catchAsync(async (req, res, next) => {
-  const products = await Product.find();
+  const queryString = req.query as unknown as QueryString;
 
-  res.status(200).json({ status: 'success', data: { products } });
+  const features = new APIFeatures(Product.find(), queryString)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+
+  const products = await features.query;
+  res
+    .status(200)
+    .json({ status: 'success', results: products.length, data: { products } });
 });
 
 // ----------------------- Getting Single Product ----------------------------

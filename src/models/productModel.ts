@@ -2,7 +2,18 @@ import mongoose from 'mongoose';
 
 const requiredSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
-const productSchema = new mongoose.Schema({
+interface IProduct extends Document {
+  name: string;
+  photos: string[];
+  gender: 'male' | 'female' | 'unisex';
+  description: string;
+  price: number;
+  sizes: { name: string; amount: number }[];
+  materials: { name: string; amount: number }[];
+  slug?: string;
+}
+
+const productSchema = new mongoose.Schema<IProduct>({
   name: {
     type: String,
     required: [true, 'Product must have a name.'],
@@ -12,7 +23,7 @@ const productSchema = new mongoose.Schema({
     minlength: [8, 'Product name must have more or equal then 8 characters'],
   },
   slug: String,
-  images: [String],
+  photos: [String],
   gender: {
     type: String,
     required: [true, 'Product must have a gender.'],
@@ -21,6 +32,15 @@ const productSchema = new mongoose.Schema({
       message: 'Gender must be either: male, female or unisex ',
     },
   },
+  materials: [
+    {
+      name: { type: String, required: [true, 'A material must have a name.'] },
+      amount: {
+        type: Number,
+        required: [true, 'A material must have an amount.'],
+      },
+    },
+  ],
   description: {
     type: String,
     required: [true, 'Product must have a description.'],
