@@ -1,7 +1,6 @@
 [
   {
     "name": "Sunrise Lounge Pants",
-    "slug": "sunrise-lounge-pants",
     "photos": [],
     "description": "Comfortable lounge pants perfect for relaxing at home. These pants are breathable, soft, and completely plastic-free.",
     "price": 34.99,
@@ -21,7 +20,6 @@
   },
   {
     "name": "Mountain Explorer Jacket",
-    "slug": "mountain-explorer-jacket",
     "photos": [],
     "description": "A durable and stylish jacket for outdoor adventures. This jacket is designed to keep you warm and is completely plastic-free.",
     "price": 79.99,
@@ -41,7 +39,6 @@
   },
   {
     "name": "Forest Trail Hoodie",
-    "slug": "forest-trail-hoodie",
     "photos": [],
     "description": "Stay warm and cozy with this eco-friendly hoodie. Perfect for outdoor adventures and made without any plastic.",
     "price": 69.99,
@@ -61,7 +58,6 @@
   },
   {
     "name": "Urban Nomad Shirt",
-    "slug": "urban-nomad-shirt",
     "photos": [],
     "description": "A stylish shirt perfect for city living. Made with sustainable materials and completely free of plastic.",
     "price": 44.99,
@@ -78,7 +74,6 @@
   },
   {
     "name": "Evergreen Pullover",
-    "slug": "evergreen-pullover",
     "photos": [],
     "description": "Stay cozy with this eco-friendly pullover. Perfect for cooler weather and made with sustainable materials.",
     "price": 49.99,
@@ -98,7 +93,6 @@
   },
   {
     "name": "Midnight Wanderer Pants",
-    "slug": "midnight-wanderer-pants",
     "photos": [],
     "description": "Stylish and comfortable pants perfect for any adventure. These eco-friendly pants are made without any plastic.",
     "price": 34.99,
@@ -118,7 +112,6 @@
   },
   {
     "name": "Evergreen Forest T-Shirt",
-    "slug": "evergreen-forest-t-shirt",
     "photos": [],
     "gender": "male",
     "description": "Embrace the spirit of nature with our Evergreen Forest T-Shirt. Crafted for adventurers, this shirt combines comfort with eco-consciousness, making it perfect for both urban and outdoor explorations.",
@@ -138,7 +131,6 @@
   },
   {
     "name": "Misty Mountain Sweater",
-    "slug": "misty-mountain-sweater",
     "photos": [],
     "gender": "male",
     "description": "Wrap yourself in the cozy embrace of our Misty Mountain Sweater. Inspired by rugged terrains and chilly breezes, this sweater is crafted from sustainable materials, ensuring warmth without compromising on style.",
@@ -158,7 +150,6 @@
   },
   {
     "name": "EcoTrail Explorer Hoodie",
-    "slug": "ecotrail-explorer-hoodie",
     "photos": [],
     "gender": "male",
     "description": "Gear up for your next adventure with our EcoTrail Explorer Hoodie. Crafted from eco-friendly materials, this hoodie offers both sustainability and comfort, making it an essential companion for your outdoor escapades.",
@@ -178,7 +169,6 @@
   },
   {
     "name": "Boreal Bliss Sweatshirt",
-    "slug": "boreal-bliss-sweatshirt",
     "photos": [],
     "gender": "male",
     "description": "Find warmth and serenity in our Boreal Bliss Sweatshirt. Crafted with care from sustainable materials, this sweatshirt offers cozy comfort wherever you go, from urban streets to tranquil forests.",
@@ -198,7 +188,7 @@
   },
   {
     "name": "Azure Skyline Shirt",
-    "slug": "azure-skyline-shirt",
+
     "photos": [],
     "gender": "male",
     "description": "Elevate your style with our Azure Skyline Shirt. Made for those who dare to dream, this shirt features breathable fabric and a relaxed fit, perfect for embracing the warmth of summer skies.",
@@ -215,7 +205,6 @@
   },
   {
     "name": "Forest Trailblazer Joggers",
-    "slug": "forest-trailblazer-joggers",
     "photos": [],
     "gender": "male",
     "description": "Embark on your next journey with our Forest Trailblazer Joggers. Designed for explorers, these joggers offer durability and flexibility, allowing you to conquer new horizons in style.",
@@ -235,7 +224,7 @@
   },
   {
     "name": "Rugged Ranger Jeans",
-    "slug": "rugged-ranger-jeans",
+
     "photos": [],
     "gender": "male",
     "description": "Unleash your inner adventurer with our Rugged Ranger Jeans. Crafted for rugged terrain and urban jungles alike, these jeans offer both style and durability for your everyday quests.",
@@ -255,7 +244,6 @@
   },
   {
     "name": "Rustic Explorer Shorts",
-    "slug": "rustic-explorer-shorts",
     "photos": [],
     "description": "Venture into the wild with our Rustic Explorer Shorts. Made from organic materials, these shorts offer both comfort and durability for your outdoor adventures.",
     "price": 39.99,
@@ -275,7 +263,6 @@
   },
   {
     "name": "Wilderness Wanderer Vest",
-    "slug": "wilderness-wanderer-vest",
     "photos": [],
     "description": "Explore the great outdoors with our Wilderness Wanderer Vest. Crafted from sustainable materials, this vest provides warmth and style without harming the enviroment.",
     "price": 59.99,
@@ -295,7 +282,6 @@
   },
   {
     "name": "Trailblazer Beanie",
-    "slug": "trailblazer-beanie",
     "photos": [],
     "description": "Keep warm on your adventures with our Trailblazer Beanie. Made from natural fibers, this beanie is a must-have accessory for any outdoor enthusiast.",
     "price": 24.99,
@@ -308,7 +294,6 @@
   },
   {
     "name": "River Rapids Shirt",
-    "slug": "river-rapids-shirt",
     "photos": [],
     "description": "Stay cool and comfortable with our River Rapids Shirt. Crafted from breathable materials, this shirt is perfect for hot summer days by the water.",
     "price": 29.99,
@@ -328,7 +313,6 @@
   },
   {
     "name": "Forest Trekker Backpack",
-    "slug": "forest-trekker-backpack",
     "photos": [],
     "description": "Embark on your next journey with our Forest Trekker Backpack. Made from sustainable materials, this backpack is designed to withstand rugged terrain while minimizing environmental impact.",
     "price": 89.99,
@@ -341,7 +325,6 @@
   },
   {
     "name": "Mountain Peak Polo",
-    "slug": "mountain-peak-polo",
     "photos": [],
     "description": "Conquer new heights in style with our Mountain Peak Polo. Crafted from natural fibers, this polo offers both comfort and sophistication for your outdoor endeavors.",
     "price": 49.99,
@@ -361,7 +344,6 @@
   },
   {
     "name": "Riverside Retreat Cardigan",
-    "slug": "riverside-retreat-cardigan",
     "photos": [],
     "description": "Wrap yourself in comfort with our Riverside Retreat Cardigan. Made from eco-friendly materials, this cardigan is perfect for cozy evenings by the fire or brisk walks by the river.",
     "price": 59.99,

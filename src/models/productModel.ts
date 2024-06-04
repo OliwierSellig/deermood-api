@@ -85,6 +85,11 @@ productSchema.pre('save', function (next) {
   next();
 });
 
+productSchema.pre('save', function (next) {
+  this.slug = this.name.trim().toLowerCase().replaceAll(' ', '-');
+  next();
+});
+
 const Product = mongoose.model('Product', productSchema);
 
 export default Product;
