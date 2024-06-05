@@ -7,7 +7,9 @@
     "build": "tsc",
     "start": "tsc --noEmit && tsx watch src/server.ts",
     "deleteSample": "tsx sample/import-sample-data.ts --delete",
-    "refetchSample": "tsx sample/import-sample-data.ts --import"
+    "refetchSample": "tsx sample/import-sample-data.ts --import",
+    "deleteProducts": "tsx sample/import-sample-data.ts --delete-products",
+    "refetchProducts": "tsx sample/import-sample-data.ts --import-products"
   },
   "author": "Oliwier Sellig",
   "license": "ISC",

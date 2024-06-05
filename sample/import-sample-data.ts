@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import fs from 'fs';
 import Product from '../src/models/productModel.ts';
+import ProductCollection from '../src/models/productCollectionModel.ts';
 
 dotenv.config({ path: './config.env' });
 
@@ -14,11 +15,19 @@ mongoose.connect(DB).then(() => console.log('DB connection successful!'));
 
 // READ JSON FILE
 const products = JSON.parse(fs.readFileSync(`./sample/products.json`, 'utf-8'));
+const productCollections = JSON.parse(
+  fs.readFileSync('./sample/productCollections.json', 'utf-8'),
+);
 
 // IMPORT DATA INTO DB
-const importData = async () => {
+const importData = async (collections: {
+  products?: boolean;
+  productCollections?: boolean;
+}) => {
   try {
-    await Product.create(products);
+    if (collections.products) await Product.create(products);
+    if (collections.productCollections)
+      await ProductCollection.create(productCollections);
   } catch (err) {
     console.log(err);
   }
@@ -26,9 +35,13 @@ const importData = async () => {
 };
 
 // DELETE ALL DATA FROM DB
-const deleteData = async () => {
+const deleteData = async (collections: {
+  products?: boolean;
+  productCollections?: boolean;
+}) => {
   try {
-    await Product.deleteMany();
+    if (collections.products) await Product.deleteMany();
+    if (collections.productCollections) await ProductCollection.deleteMany();
     console.log('Data successfully deleted!');
   } catch (err) {
     console.log(err);
@@ -36,8 +49,15 @@ const deleteData = async () => {
   process.exit();
 };
 
+if (process.argv[2] === '--import-products') {
+  importData({ products: true });
+}
+if (process.argv[2] === '--delete-products') {
+  deleteData({ products: true });
+}
 if (process.argv[2] === '--import') {
-  importData();
-} else if (process.argv[2] === '--delete') {
-  deleteData();
+  importData({ products: true, productCollections: true });
+}
+if (process.argv[2] === '--delete') {
+  deleteData({ products: true, productCollections: true });
 }

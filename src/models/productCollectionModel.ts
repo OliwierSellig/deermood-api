@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import { getSlug } from '../utils/getSlug.js';
 
-interface ICollection extends Document {
+interface IProductCollection extends Document {
   name: string;
   slug: string;
   description: string;
@@ -9,11 +9,10 @@ interface ICollection extends Document {
   gender: 'male' | 'female' | 'unisex';
 }
 
-const collectionSchema = new mongoose.Schema<ICollection>({
+const productCollectionSchema = new mongoose.Schema<IProductCollection>({
   name: {
     type: String,
     required: [true, 'Collection must have a name.'],
-    unique: true,
     trim: true,
     maxlength: [
       32,
@@ -44,11 +43,14 @@ const collectionSchema = new mongoose.Schema<ICollection>({
   photos: [String],
 });
 
-collectionSchema.pre('save', function (next) {
+productCollectionSchema.pre('save', function (next) {
   this.slug = getSlug(this.name);
   next();
 });
 
-const Collection = mongoose.model('Collection', collectionSchema);
+const ProductCollection = mongoose.model(
+  'ProductCollection',
+  productCollectionSchema,
+);
 
-export default Collection;
+export default ProductCollection;
