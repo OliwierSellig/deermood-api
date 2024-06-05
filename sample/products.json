@@ -360,5 +360,701 @@
       { "name": "alpaca-wool", "amount": 60 },
       { "name": "organic-cotton", "amount": 40 }
     ]
+  },
+  {
+    "name": "Nature's Whisper Tee",
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Organic Cotton",
+        "amount": 100
+      }
+    ],
+    "description": "A soft and breathable T-shirt that brings a touch of nature to your everyday wear. Made from 100% organic cotton.",
+    "price": 25.99,
+    "sizes": [
+      {
+        "name": "S",
+        "amount": 10
+      },
+      {
+        "name": "M",
+        "amount": 8
+      },
+      {
+        "name": "L",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "name": "Serenity Maxi Dress",
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Bamboo Fabric",
+        "amount": 100
+      }
+    ],
+    "description": "An elegant and flowing maxi dress designed for both comfort and style. Crafted from 100% bamboo fabric.",
+    "price": 79.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 6
+      },
+      {
+        "name": "S",
+        "amount": 10
+      },
+      {
+        "name": "M",
+        "amount": 7
+      },
+      {
+        "name": "L",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "name": "Eco Chic Cardigan",
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Recycled Wool",
+        "amount": 100
+      }
+    ],
+    "description": "Stay warm and stylish with this cozy cardigan, blending comfort with sustainability. Made from 100% recycled wool.",
+    "price": 59.99,
+    "sizes": [
+      {
+        "name": "M",
+        "amount": 4
+      },
+      {
+        "name": "L",
+        "amount": 5
+      },
+      {
+        "name": "XL",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Urban Jungle Hoodie",
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Organic Cotton",
+        "amount": 80
+      },
+      {
+        "name": "Recycled Polyester",
+        "amount": 20
+      }
+    ],
+    "description": "A stylish and comfortable hoodie perfect for any urban adventure. Made from a blend of organic cotton and recycled polyester.",
+    "price": 49.99,
+    "sizes": [
+      {
+        "name": "S",
+        "amount": 7
+      },
+      {
+        "name": "M",
+        "amount": 10
+      },
+      {
+        "name": "L",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "name": "EcoVibe Joggers",
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Hemp",
+        "amount": 70
+      },
+      {
+        "name": "Organic Cotton",
+        "amount": 30
+      }
+    ],
+    "description": "Comfortable and sustainable joggers that are perfect for both lounging and exercising. Made from a mix of hemp and organic cotton.",
+    "price": 39.99,
+    "sizes": [
+      {
+        "name": "S",
+        "amount": 12
+      },
+      {
+        "name": "M",
+        "amount": 8
+      },
+      {
+        "name": "L",
+        "amount": 6
+      }
+    ]
+  },
+  {
+    "name": "Earthbound Elegance Dress",
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Organic Linen",
+        "amount": 70
+      },
+      {
+        "name": "Organic Cotton",
+        "amount": 30
+      }
+    ],
+    "description": "A sophisticated dress made from a blend of organic linen and cotton, perfect for any occasion with a touch of eco-friendly elegance.",
+    "price": 89.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 5
+      },
+      {
+        "name": "S",
+        "amount": 8
+      },
+      {
+        "name": "M",
+        "amount": 10
+      },
+      {
+        "name": "L",
+        "amount": 6
+      },
+      {
+        "name": "XL",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "name": "Sunset Chill Tank",
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Hemp",
+        "amount": 60
+      },
+      {
+        "name": "Organic Cotton",
+        "amount": 40
+      }
+    ],
+    "description": "Enjoy your summer days with this relaxed and breathable tank top, made from a sustainable blend of hemp and organic cotton.",
+    "price": 29.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 10
+      },
+      {
+        "name": "S",
+        "amount": 15
+      },
+      {
+        "name": "M",
+        "amount": 12
+      },
+      {
+        "name": "L",
+        "amount": 7
+      },
+      {
+        "name": "XL",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "name": "Forest Trail Joggers",
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Recycled Polyester",
+        "amount": 70
+      },
+      {
+        "name": "Organic Cotton",
+        "amount": 30
+      }
+    ],
+    "description": "Stay active and eco-friendly with these comfortable joggers, made from recycled polyester and organic cotton for a sustainable lifestyle.",
+    "price": 45.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 8
+      },
+      {
+        "name": "S",
+        "amount": 12
+      },
+      {
+        "name": "M",
+        "amount": 10
+      },
+      {
+        "name": "L",
+        "amount": 6
+      },
+      {
+        "name": "XL",
+        "amount": 4
+      },
+      {
+        "name": "XXL",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Winter Breeze Coat",
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Recycled Wool",
+        "amount": 80
+      },
+      {
+        "name": "Organic Cotton",
+        "amount": 20
+      }
+    ],
+    "description": "Keep warm during the cold months with this stylish coat, crafted from recycled wool and organic cotton for ultimate sustainability.",
+    "price": 129.99,
+    "sizes": [
+      {
+        "name": "S",
+        "amount": 5
+      },
+      {
+        "name": "M",
+        "amount": 8
+      },
+      {
+        "name": "L",
+        "amount": 7
+      },
+      {
+        "name": "XL",
+        "amount": 3
+      },
+      {
+        "name": "XXL",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Ocean Waves Shorts",
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Hemp",
+        "amount": 55
+      },
+      {
+        "name": "Organic Cotton",
+        "amount": 45
+      }
+    ],
+    "description": "Perfect for the beach or a summer day out, these shorts are made from a blend of hemp and organic cotton, offering comfort and sustainability.",
+    "price": 34.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 10
+      },
+      {
+        "name": "S",
+        "amount": 12
+      },
+      {
+        "name": "M",
+        "amount": 9
+      },
+      {
+        "name": "L",
+        "amount": 6
+      },
+      {
+        "name": "XL",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "name": "Pure Comfort Leggings",
+    "photos": [],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Organic Cotton",
+        "amount": 100
+      }
+    ],
+    "description": "Experience unparalleled comfort with these eco-friendly leggings, made from 100% organic cotton for a sustainable and soft touch.",
+    "price": 39.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 12
+      },
+      {
+        "name": "S",
+        "amount": 10
+      },
+      {
+        "name": "M",
+        "amount": 8
+      },
+      {
+        "name": "L",
+        "amount": 5
+      },
+      {
+        "name": "XL",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "name": "Cocoon Sweater",
+    "photos": [],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Bamboo Fabric",
+        "amount": 100
+      }
+    ],
+    "description": "Wrap yourself in the soft embrace of this sweater, crafted from 100% bamboo fabric for a luxurious and sustainable wear.",
+    "price": 64.99,
+    "sizes": [
+      {
+        "name": "S",
+        "amount": 8
+      },
+      {
+        "name": "M",
+        "amount": 10
+      },
+      {
+        "name": "L",
+        "amount": 6
+      },
+      {
+        "name": "XL",
+        "amount": 4
+      },
+      {
+        "name": "XXL",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Ocean Breeze Skirt",
+    "photos": [],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Hemp",
+        "amount": 100
+      }
+    ],
+    "description": "Feel the ocean breeze with this light and airy skirt, made entirely from hemp for a natural and eco-friendly fashion statement.",
+    "price": 29.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 10
+      },
+      {
+        "name": "S",
+        "amount": 12
+      },
+      {
+        "name": "M",
+        "amount": 8
+      },
+      {
+        "name": "L",
+        "amount": 5
+      },
+      {
+        "name": "XL",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "name": "EcoLuxe Top",
+    "photos": [],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Tencel",
+        "amount": 100
+      }
+    ],
+    "description": "Elevate your wardrobe with this luxurious top made from 100% Tencel, offering a perfect blend of style and sustainability.",
+    "price": 49.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 7
+      },
+      {
+        "name": "S",
+        "amount": 10
+      },
+      {
+        "name": "M",
+        "amount": 9
+      },
+      {
+        "name": "L",
+        "amount": 6
+      },
+      {
+        "name": "XL",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "name": "GreenPath Jacket",
+    "photos": [],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Recycled Wool",
+        "amount": 100
+      }
+    ],
+    "description": "Choose a sustainable future with this stylish jacket, made from 100% recycled wool, perfect for any outdoor adventure.",
+    "price": 99.99,
+    "sizes": [
+      {
+        "name": "S",
+        "amount": 6
+      },
+      {
+        "name": "M",
+        "amount": 8
+      },
+      {
+        "name": "L",
+        "amount": 7
+      },
+      {
+        "name": "XL",
+        "amount": 5
+      },
+      {
+        "name": "XXL",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "name": "Nature's Touch T-Shirt",
+    "photos": [],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Organic Cotton",
+        "amount": 100
+      }
+    ],
+    "description": "Feel the softness of nature with this 100% organic cotton T-shirt, perfect for everyday wear with a sustainable twist.",
+    "price": 24.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 15
+      },
+      {
+        "name": "S",
+        "amount": 20
+      },
+      {
+        "name": "M",
+        "amount": 18
+      },
+      {
+        "name": "L",
+        "amount": 10
+      },
+      {
+        "name": "XL",
+        "amount": 7
+      }
+    ]
+  },
+  {
+    "name": "Willow Whisper Dress",
+    "photos": [],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Hemp",
+        "amount": 100
+      }
+    ],
+    "description": "Embrace elegance with this lightweight dress, made from 100% hemp for a natural, breathable, and eco-friendly outfit.",
+    "price": 79.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 10
+      },
+      {
+        "name": "S",
+        "amount": 12
+      },
+      {
+        "name": "M",
+        "amount": 8
+      },
+      {
+        "name": "L",
+        "amount": 5
+      },
+      {
+        "name": "XL",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "name": "Bamboo Bliss Hoodie",
+    "photos": [],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Bamboo Fabric",
+        "amount": 100
+      }
+    ],
+    "description": "Stay cozy and stylish with this hoodie made from 100% bamboo fabric, offering sustainable warmth and comfort.",
+    "price": 59.99,
+    "sizes": [
+      {
+        "name": "S",
+        "amount": 10
+      },
+      {
+        "name": "M",
+        "amount": 12
+      },
+      {
+        "name": "L",
+        "amount": 7
+      },
+      {
+        "name": "XL",
+        "amount": 5
+      },
+      {
+        "name": "XXL",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "name": "Sustainable Serenity Pants",
+    "photos": [],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Tencel",
+        "amount": 100
+      }
+    ],
+    "description": "Relax in these comfortable pants made from 100% Tencel, perfect for lounging or casual outings with a touch of eco-friendly style.",
+    "price": 49.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 8
+      },
+      {
+        "name": "S",
+        "amount": 10
+      },
+      {
+        "name": "M",
+        "amount": 9
+      },
+      {
+        "name": "L",
+        "amount": 6
+      },
+      {
+        "name": "XL",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "name": "Rejuvenate Tank",
+    "photos": [],
+    "gender": "female",
+    "materials": [
+      {
+        "name": "Organic Linen",
+        "amount": 100
+      }
+    ],
+    "description": "Stay cool and refreshed with this tank top made from 100% organic linen, offering breathable comfort and sustainable fashion.",
+    "price": 29.99,
+    "sizes": [
+      {
+        "name": "XS",
+        "amount": 12
+      },
+      {
+        "name": "S",
+        "amount": 15
+      },
+      {
+        "name": "M",
+        "amount": 10
+      },
+      {
+        "name": "L",
+        "amount": 7
+      },
+      {
+        "name": "XL",
+        "amount": 5
+      }
+    ]
   }
 ]

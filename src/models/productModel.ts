@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { getSlug } from '../utils/getSlug.js';
 
 const requiredSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
@@ -91,7 +92,7 @@ productSchema.pre('save', function (next) {
 });
 
 productSchema.pre('save', function (next) {
-  this.slug = this.name.trim().toLowerCase().replaceAll(' ', '-');
+  this.slug = getSlug(this.name);
   next();
 });
 

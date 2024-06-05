@@ -1,10 +1,12 @@
 import mongoose from 'mongoose';
+import { getSlug } from '../utils/getSlug.js';
 
 interface ICollection extends Document {
   name: string;
   slug: string;
   description: string;
   photos: string[];
+  gender: 'male' | 'female' | 'unisex';
 }
 
 const collectionSchema = new mongoose.Schema<ICollection>({
@@ -30,8 +32,21 @@ const collectionSchema = new mongoose.Schema<ICollection>({
       'Collection description must have less or equal then 200 characters',
     ],
   },
+  gender: {
+    type: String,
+    required: [true, 'Collection must attached to a gender.'],
+    enum: {
+      values: ['male', 'female', 'unisex'],
+      message: 'Gender must be either: male, female or unisex ',
+    },
+  },
   slug: String,
   photos: [String],
+});
+
+collectionSchema.pre('save', function (next) {
+  this.slug = getSlug(this.name);
+  next();
 });
 
 const Collection = mongoose.model('Collection', collectionSchema);

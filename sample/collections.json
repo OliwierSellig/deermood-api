@@ -1,0 +1,170 @@
+[
+  {
+    "name": "T-shirts & Tanks",
+    "description": "Discover our thoughtfully crafted and sustainably made collection of men's T-shirts and tanks. Welcome to everyday essentials.",
+    "gender": "male",
+    "photos": []
+  },
+  {
+    "name": "Shirts",
+    "description": "Elevate your wardrobe with our range of sustainable shirts for men, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "male",
+    "photos": []
+  },
+  {
+    "name": "Sweaters",
+    "description": "Stay warm and stylish with our collection of men's sweaters, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "male",
+    "photos": []
+  },
+  {
+    "name": "Hoodies & Sweatshirts",
+    "description": "Wrap yourself in comfort and sustainability with our collection of men's hoodies, sweatshirts, and sweatpants. Welcome to everyday essentials.",
+    "gender": "male",
+    "photos": []
+  },
+  {
+    "name": "Shorts",
+    "description": "Stay cool and comfortable with our collection of men's shorts, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "male",
+    "photos": []
+  },
+  {
+    "name": "Joggers & Pants",
+    "description": "Step up your athleisure game with our collection of men's joggers and pants, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "male",
+    "photos": []
+  },
+  {
+    "name": "Jackets & Coats",
+    "description": "Brave the elements in style with our collection of men's jackets and coats, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "male",
+    "photos": []
+  },
+  {
+    "name": "Underwear",
+    "description": "Experience ultimate comfort with our collection of men's underwear, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "male",
+    "photos": []
+  },
+  {
+    "name": "T-shirts & Tanks",
+    "description": "Discover our versatile collection of eco-friendly T-shirts and tanks designed for comfort and style, crafted with sustainable materials for a chic and sustainable look.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Tops",
+    "description": "Elevate your wardrobe with our range of sustainable tops, offering timeless designs and superior comfort for everyday wear.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Dresses",
+    "description": "Make a statement in our eco-friendly dresses, crafted from sustainable materials for effortless style and comfort on any occasion.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Sweaters",
+    "description": "Stay warm and cozy with our selection of eco-friendly sweaters, knitted from premium sustainable materials to keep you comfortable and stylish in any weather.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Hoodies & Sweatshirts",
+    "description": "Wrap yourself in comfort and sustainability with our collection of eco-friendly hoodies and sweatshirts, designed for both warmth and style, perfect for any casual occasion.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Shorts",
+    "description": "Stay cool and comfortable with our eco-friendly shorts collection, featuring breathable designs and sustainable materials to keep you feeling fresh all summer long.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Skirts",
+    "description": "Add a touch of elegance to your wardrobe with our eco-friendly skirts, crafted from sustainable materials for a chic and sustainable look.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Joggers & Pants & Leggings",
+    "description": "Step up your athleisure game with our collection of eco-friendly joggers, pants, and leggings, designed for both comfort and performance, so you can look good while staying active.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Jackets",
+    "description": "Brave the elements in style with our collection of sustainable jackets, crafted from durable and eco-friendly materials to keep you warm and protected on all your outdoor adventures.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Underwear",
+    "description": "Experience ultimate comfort with our eco-friendly underwear collection, featuring soft and breathable designs made from sustainable materials for a feel-good fit every day.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "T-shirts & Tanks",
+    "description": "Discover our thoughtfully crafted and sustainably made collection of women's T-shirts and tanks. Welcome to everyday essentials.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Tops",
+    "description": "Elevate your wardrobe with our range of sustainable tops for women, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Dresses",
+    "description": "Make a statement with our collection of women's dresses, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Sweaters",
+    "description": "Stay warm and stylish with our collection of women's sweaters, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Hoodies & Sweatshirts",
+    "description": "Wrap yourself in comfort and sustainability with our collection of women's hoodies and sweatshirts, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Shorts",
+    "description": "Stay cool and comfortable with our collection of women's shorts, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Skirts",
+    "description": "Add a touch of elegance to your wardrobe with our collection of women's skirts, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Joggers & Pants",
+    "description": "Step up your athleisure game with our collection of women's joggers and pants, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Jackets & Coats",
+    "description": "Brave the elements in style with our collection of women's jackets and coats, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "female",
+    "photos": []
+  },
+  {
+    "name": "Underwear",
+    "description": "Experience ultimate comfort with our collection of women's underwear, thoughtfully crafted and sustainably made. Welcome to everyday essentials.",
+    "gender": "female",
+    "photos": []
+  }
+]
