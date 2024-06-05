@@ -17,7 +17,7 @@
       { "name": "wool", "amount": 70 },
       { "name": "organic-cotton", "amount": 30 }
     ],
-    "collections": ["666007598ba1eb3271092898"]
+    "productCollection": "666007598ba1eb3271092898"
   },
   {
     "name": "Mountain Explorer Jacket",
@@ -37,7 +37,7 @@
       { "name": "organic-cotton", "amount": 75 },
       { "name": "wool", "amount": 25 }
     ],
-    "collections": ["666007598ba1eb3271092899"]
+    "productCollection": "666007598ba1eb3271092899"
   },
   {
     "name": "Forest Trail Hoodie",
@@ -57,7 +57,7 @@
       { "name": "organic-cotton", "amount": 95 },
       { "name": "bamboo", "amount": 5 }
     ],
-    "collections": ["666007598ba1eb3271092896"]
+    "productCollection": "666007598ba1eb3271092896"
   },
   {
     "name": "Urban Nomad Shirt",
@@ -74,7 +74,7 @@
     ],
     "gender": "male",
     "materials": [{ "name": "organic-cotton", "amount": 100 }],
-    "collections": ["666007598ba1eb3271092894"]
+    "productCollection": "666007598ba1eb3271092894"
   },
   {
     "name": "Evergreen Pullover",
@@ -94,7 +94,7 @@
       { "name": "wool", "amount": 60 },
       { "name": "organic-cotton", "amount": 40 }
     ],
-    "collections": ["666007598ba1eb3271092896"]
+    "productCollection": "666007598ba1eb3271092896"
   },
   {
     "name": "Midnight Wanderer Pants",
@@ -114,7 +114,7 @@
       { "name": "cotton", "amount": 95 },
       { "name": "bamboo", "amount": 5 }
     ],
-    "collections": ["666007598ba1eb3271092898"]
+    "productCollection": "666007598ba1eb3271092898"
   },
   {
     "name": "Evergreen Forest T-Shirt",
@@ -134,7 +134,7 @@
       { "name": "cotton", "amount": 95 },
       { "name": "bamboo", "amount": 5 }
     ],
-    "collections": ["666007598ba1eb3271092893"]
+    "productCollection": "666007598ba1eb3271092893"
   },
   {
     "name": "Misty Mountain Sweater",
@@ -154,7 +154,7 @@
       { "name": "wool", "amount": 80 },
       { "name": "organic-cotton", "amount": 20 }
     ],
-    "collections": ["666007598ba1eb3271092895"]
+    "productCollection": "666007598ba1eb3271092895"
   },
   {
     "name": "EcoTrail Explorer Hoodie",
@@ -174,7 +174,7 @@
       { "name": "hemp", "amount": 70 },
       { "name": "organic-cotton", "amount": 30 }
     ],
-    "collections": ["666007598ba1eb3271092896"]
+    "productCollection": "666007598ba1eb3271092896"
   },
   {
     "name": "Boreal Bliss Sweatshirt",
@@ -194,7 +194,7 @@
       { "name": "wool", "amount": 60 },
       { "name": "organic-cotton", "amount": 40 }
     ],
-    "collections": ["666007598ba1eb3271092896"]
+    "productCollection": "666007598ba1eb3271092896"
   },
   {
     "name": "Azure Skyline Shirt",
@@ -212,7 +212,7 @@
       { "name": "XXL", "amount": 12 }
     ],
     "materials": [{ "name": "linen", "amount": 100 }],
-    "collections": ["666007598ba1eb3271092894"]
+    "productCollection": "666007598ba1eb3271092894"
   },
   {
     "name": "Forest Trailblazer Joggers",
@@ -232,7 +232,7 @@
       { "name": "hemp", "amount": 70 },
       { "name": "organic-cotton", "amount": 30 }
     ],
-    "collections": ["666007598ba1eb3271092898"]
+    "productCollection": "666007598ba1eb3271092898"
   },
   {
     "name": "Rugged Ranger Jeans",
@@ -252,7 +252,7 @@
       { "name": "cotton", "amount": 95 },
       { "name": "linen", "amount": 5 }
     ],
-    "collections": ["666007598ba1eb3271092898"]
+    "productCollection": "666007598ba1eb3271092898"
   },
   {
     "name": "Rustic Explorer Shorts",
@@ -272,7 +272,7 @@
       { "name": "linen", "amount": 80 },
       { "name": "organic-cotton", "amount": 20 }
     ],
-    "collections": ["666007598ba1eb3271092897"]
+    "productCollection": "666007598ba1eb3271092897"
   },
   {
     "name": "Wilderness Wanderer Vest",
@@ -292,7 +292,7 @@
       { "name": "wool", "amount": 70 },
       { "name": "organic-cotton", "amount": 30 }
     ],
-    "collections": ["666007598ba1eb3271092899"]
+    "productCollection": "666007598ba1eb3271092899"
   },
   {
     "name": "River Rapids Shirt",
@@ -312,7 +312,7 @@
       { "name": "linen", "amount": 60 },
       { "name": "organic-cotton", "amount": 40 }
     ],
-    "collections": ["666007598ba1eb3271092893"]
+    "productCollection": "666007598ba1eb3271092893"
   },
   {
     "name": "Mountain Peak Polo",
@@ -332,7 +332,7 @@
       { "name": "wool", "amount": 70 },
       { "name": "organic-cotton", "amount": 30 }
     ],
-    "collections": ["666007598ba1eb3271092893"]
+    "productCollection": "666007598ba1eb3271092893"
   },
   {
     "name": "Riverside Retreat Cardigan",
@@ -352,7 +352,7 @@
       { "name": "alpaca-wool", "amount": 60 },
       { "name": "organic-cotton", "amount": 40 }
     ],
-    "collections": ["666007598ba1eb3271092895"]
+    "productCollection": "666007598ba1eb3271092895"
   },
   {
     "name": "Nature's Whisper Tee",
@@ -380,7 +380,7 @@
         "amount": 5
       }
     ],
-    "collections": ["666007598ba1eb327109289b"]
+    "productCollection": "666007598ba1eb327109289b"
   },
   {
     "name": "Serenity Maxi Dress",
@@ -412,7 +412,7 @@
         "amount": 3
       }
     ],
-    "collections": ["666007598ba1eb327109289d"]
+    "productCollection": "666007598ba1eb327109289d"
   },
   {
     "name": "Eco Chic Cardigan",
@@ -440,7 +440,7 @@
         "amount": 2
       }
     ],
-    "collections": ["666007598ba1eb327109289e"]
+    "productCollection": "666007598ba1eb327109289e"
   },
   {
     "name": "Urban Jungle Hoodie",
@@ -472,7 +472,7 @@
         "amount": 5
       }
     ],
-    "collections": ["666007598ba1eb327109289f"]
+    "productCollection": "666007598ba1eb327109289f"
   },
   {
     "name": "EcoVibe Joggers",
@@ -504,7 +504,7 @@
         "amount": 6
       }
     ],
-    "collections": ["666007598ba1eb32710928a2"]
+    "productCollection": "666007598ba1eb32710928a2"
   },
   {
     "name": "Earthbound Elegance Dress",
@@ -544,7 +544,7 @@
         "amount": 4
       }
     ],
-    "collections": ["666007598ba1eb327109289d"]
+    "productCollection": "666007598ba1eb327109289d"
   },
   {
     "name": "Sunset Chill Tank",
@@ -584,7 +584,7 @@
         "amount": 5
       }
     ],
-    "collections": ["666007598ba1eb327109289b"]
+    "productCollection": "666007598ba1eb327109289b"
   },
   {
     "name": "Forest Trail Joggers",
@@ -628,7 +628,7 @@
         "amount": 2
       }
     ],
-    "collections": ["666007598ba1eb32710928a2"]
+    "productCollection": "666007598ba1eb32710928a2"
   },
   {
     "name": "Winter Breeze Coat",
@@ -668,7 +668,7 @@
         "amount": 2
       }
     ],
-    "collections": ["666007598ba1eb32710928a3"]
+    "productCollection": "666007598ba1eb32710928a3"
   },
   {
     "name": "Ocean Waves Shorts",
@@ -708,7 +708,7 @@
         "amount": 4
       }
     ],
-    "collections": ["666007598ba1eb32710928a0"]
+    "productCollection": "666007598ba1eb32710928a0"
   },
   {
     "name": "Pure Comfort Leggings",
@@ -744,7 +744,7 @@
         "amount": 3
       }
     ],
-    "collections": ["666007598ba1eb32710928a2"]
+    "productCollection": "666007598ba1eb32710928a2"
   },
   {
     "name": "Cocoon Sweater",
@@ -780,7 +780,7 @@
         "amount": 2
       }
     ],
-    "collections": ["666007598ba1eb327109289f"]
+    "productCollection": "666007598ba1eb327109289f"
   },
   {
     "name": "Ocean Breeze Skirt",
@@ -816,7 +816,7 @@
         "amount": 3
       }
     ],
-    "collections": ["666007598ba1eb32710928a1"]
+    "productCollection": "666007598ba1eb32710928a1"
   },
   {
     "name": "EcoLuxe Top",
@@ -852,7 +852,7 @@
         "amount": 4
       }
     ],
-    "collections": ["666007598ba1eb327109289c"]
+    "productCollection": "666007598ba1eb327109289c"
   },
   {
     "name": "GreenPath Jacket",
@@ -888,7 +888,7 @@
         "amount": 3
       }
     ],
-    "collections": ["666007598ba1eb32710928a3"]
+    "productCollection": "666007598ba1eb32710928a3"
   },
   {
     "name": "Nature's Touch T-Shirt",
@@ -924,7 +924,7 @@
         "amount": 7
       }
     ],
-    "collections": ["666007598ba1eb327109289b"]
+    "productCollection": "666007598ba1eb327109289b"
   },
   {
     "name": "Willow Whisper Dress",
@@ -960,7 +960,7 @@
         "amount": 3
       }
     ],
-    "collections": ["666007598ba1eb327109289d"]
+    "productCollection": "666007598ba1eb327109289d"
   },
   {
     "name": "Bamboo Bliss Hoodie",
@@ -996,7 +996,7 @@
         "amount": 3
       }
     ],
-    "collections": ["666007598ba1eb327109289f"]
+    "productCollection": "666007598ba1eb327109289f"
   },
   {
     "name": "Sustainable Serenity Pants",
@@ -1032,7 +1032,7 @@
         "amount": 4
       }
     ],
-    "collections": ["666007598ba1eb32710928a2"]
+    "productCollection": "666007598ba1eb32710928a2"
   },
   {
     "name": "Rejuvenate Tank",
@@ -1068,6 +1068,6 @@
         "amount": 5
       }
     ],
-    "collections": ["666007598ba1eb327109289b"]
+    "productCollection": "666007598ba1eb327109289b"
   }
 ]

@@ -31,7 +31,9 @@ export const getAllCollections = catchAsync(async (req, res, next) => {
 
 export const getSingleCollection = catchAsync(async (req, res, next) => {
   const id = req.params.id;
-  const collection = await ProductCollection.findById(id);
+  const collection = await ProductCollection.findById(id).populate('products');
+
+  console.log(collection);
 
   if (!collection) {
     return next(new AppError('No collection found with that ID', 404));
