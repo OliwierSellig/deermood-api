@@ -11,6 +11,10 @@ interface IProduct extends Document {
   sizes: { name: string; amount: number }[];
   materials: { name: string; amount: number }[];
   slug?: string;
+  collections: {
+    type: typeof mongoose.Schema.Types.ObjectId;
+    ref: string;
+  }[];
 }
 
 const productSchema = new mongoose.Schema<IProduct>({
@@ -71,6 +75,7 @@ const productSchema = new mongoose.Schema<IProduct>({
       },
     },
   ],
+  collections: [{ type: mongoose.Schema.ObjectId, ref: 'Collection' }],
 });
 
 productSchema.pre('save', function (next) {
