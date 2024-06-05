@@ -1,6 +1,7 @@
 import express from 'express';
 import Product from './models/productModel.js';
 import productRouter from './routes/productRoutes.js';
+import collectionRouter from './routes/productCollectionRoutes.js';
 import AppError from './utils/appError.js';
 import globalErrorHandler from './controllers/erorrController.js';
 
@@ -15,6 +16,8 @@ app.get('/api/home', async (req, res) => {
 });
 
 app.use('/api/v1/products', productRouter);
+
+app.use('/api/v1/collections', collectionRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
