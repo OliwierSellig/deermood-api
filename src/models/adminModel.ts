@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
 
 interface IAdmin extends Document {
   firstName: string;
@@ -32,9 +33,17 @@ const adminSchema = new mongoose.Schema<IAdmin>({
   password: {
     type: String,
     select: false,
-    required: [true, 'Admin must have a password'],
+    required: [true, 'Admin must  have a password'],
     minlength: [8, 'Password must contain at least 8 characters'],
   },
+});
+
+adminSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) return next();
+
+  this.password = await bcrypt.hash(this.password, 12);
+
+  next();
 });
 
 const Admin = mongoose.model('Admin', adminSchema);

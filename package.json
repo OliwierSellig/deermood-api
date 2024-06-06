@@ -9,12 +9,15 @@
     "deleteSample": "tsx sample/import-sample-data.ts --delete",
     "refetchSample": "tsx sample/import-sample-data.ts --import",
     "deleteProducts": "tsx sample/import-sample-data.ts --delete-products",
-    "refetchProducts": "tsx sample/import-sample-data.ts --import-products"
+    "refetchProducts": "tsx sample/import-sample-data.ts --import-products",
+    "deleteAdmins": "tsx sample/import-sample-data.ts --delete-admins",
+    "refetchAdmins": "tsx sample/import-sample-data.ts --import-admins"
   },
   "author": "Oliwier Sellig",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^4.17.21",
     "@types/node": "^20.12.13",
     "@typescript-eslint/eslint-plugin": "^7.11.0",
@@ -28,6 +31,7 @@
     "esm": true
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongodb": "^6.7.0",

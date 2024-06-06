@@ -1,0 +1,37 @@
+[
+  {
+    "firstName": "Oliwier",
+    "surname": "Sellig",
+    "photo": "",
+    "email": "oliwier@deermood.com",
+    "password": "test1234"
+  },
+  {
+    "firstName": "Andrzej",
+    "surname": "Sellig",
+    "photo": "",
+    "email": "oliwier@deermood.com",
+    "password": "test1234"
+  },
+  {
+    "firstName": "Elon",
+    "surname": "Musk",
+    "photo": "",
+    "email": "elon@deermood.com",
+    "password": "test1234"
+  },
+  {
+    "firstName": "Jeff",
+    "surname": "Bezos",
+    "photo": "",
+    "email": "jeff@deermood.com",
+    "password": "test1234"
+  },
+  {
+    "firstName": "Brandon",
+    "surname": "Sanderson",
+    "photo": "",
+    "email": "brandon@deermood.com",
+    "password": "test1234"
+  }
+]

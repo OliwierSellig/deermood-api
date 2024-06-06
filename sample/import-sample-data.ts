@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import fs from 'fs';
 import Product from '../src/models/productModel.ts';
+import Admin from '../src/models/adminModel.ts';
 import ProductCollection from '../src/models/productCollectionModel.ts';
 
 dotenv.config({ path: './config.env' });
@@ -18,16 +19,31 @@ const products = JSON.parse(fs.readFileSync(`./sample/products.json`, 'utf-8'));
 const productCollections = JSON.parse(
   fs.readFileSync('./sample/productCollections.json', 'utf-8'),
 );
+const admins = JSON.parse(fs.readFileSync(`./sample/admins.json`, 'utf-8'));
 
 // IMPORT DATA INTO DB
 const importData = async (collections: {
   products?: boolean;
   productCollections?: boolean;
+  admins?: boolean;
 }) => {
   try {
     if (collections.products) await Product.create(products);
     if (collections.productCollections)
       await ProductCollection.create(productCollections);
+    if (collections.admins) {
+      const adminList = admins.map((admin) => {
+        return {
+          firstName: admin.firstName,
+          surname: admin.surname,
+          photo: admin.photo,
+          email: admin.email,
+          password: admin.password,
+        };
+      });
+
+      await Admin.create(adminList);
+    }
   } catch (err) {
     console.log(err);
   }
@@ -38,10 +54,12 @@ const importData = async (collections: {
 const deleteData = async (collections: {
   products?: boolean;
   productCollections?: boolean;
+  admins?: boolean;
 }) => {
   try {
     if (collections.products) await Product.deleteMany();
     if (collections.productCollections) await ProductCollection.deleteMany();
+    if (collections.admins) await Admin.deleteMany();
     console.log('Data successfully deleted!');
   } catch (err) {
     console.log(err);
@@ -55,9 +73,15 @@ if (process.argv[2] === '--import-products') {
 if (process.argv[2] === '--delete-products') {
   deleteData({ products: true });
 }
+if (process.argv[2] === '--import-admins') {
+  importData({ admins: true });
+}
+if (process.argv[2] === '--delete-admins') {
+  deleteData({ admins: true });
+}
 if (process.argv[2] === '--import') {
-  importData({ products: true, productCollections: true });
+  importData({ products: true, productCollections: true, admins: true });
 }
 if (process.argv[2] === '--delete') {
-  deleteData({ products: true, productCollections: true });
+  deleteData({ products: true, productCollections: true, admins: true });
 }
