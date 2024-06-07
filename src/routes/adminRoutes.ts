@@ -2,6 +2,8 @@ import express from 'express';
 import {
   createAdmin,
   deleteAdmin,
+  getAllAdmins,
+  getSingleAdmin,
   loginAdmin,
   updateAdmin,
 } from '../controllers/adminController.js';
@@ -10,8 +12,12 @@ const router = express.Router();
 
 router.route('/login').post(loginAdmin);
 
-router.route('/').post(createAdmin);
+router.route('/').get(getAllAdmins).post(createAdmin);
 
-router.route('/:adminId').patch(updateAdmin).delete(deleteAdmin);
+router
+  .route('/:adminId')
+  .get(getSingleAdmin)
+  .patch(updateAdmin)
+  .delete(deleteAdmin);
 
 export default router;
