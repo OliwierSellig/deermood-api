@@ -1,8 +1,48 @@
+import { promisify } from 'util';
 import Admin from '../models/adminModel.js';
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
 import { checkPasswordCorrect } from '../utils/checkPasswordCorrect.js';
 import { signJWT } from '../utils/signJWT.js';
+import jwt, { JwtPayload, Secret } from 'jsonwebtoken';
+
+// ----------------------- Protecting Admin Route ----------------------------
+
+export const protectAdmin = catchAsync(async (req, res, next) => {
+  console.log('Im here 😍');
+  let token: string | undefined;
+  if (
+    req.headers?.authorization &&
+    req.headers?.authorization.startsWith('Bearer')
+  )
+    token = req.headers.authorization.split(' ')[1];
+
+  if (!token) {
+    return next(
+      new AppError('You are not logged in! Please log in to get access.', 401),
+    );
+  }
+
+  const verifyAsync = promisify(jwt.verify) as (
+    token: string,
+    secretOrPublicKey: Secret,
+  ) => Promise<JwtPayload>;
+
+  const decoded = await verifyAsync(token, process.env.JWT_SECRET as Secret);
+
+  const currentAdmin = await Admin.findById(decoded.id);
+
+  if (!currentAdmin) {
+    return next(
+      new AppError(
+        'The admin belonging to this token does no longer exist.',
+        401,
+      ),
+    );
+  }
+
+  next();
+});
 
 // ----------------------- Logging as Admin ----------------------------
 
