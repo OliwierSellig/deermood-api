@@ -2,6 +2,9 @@ import Admin from '../models/adminModel.js';
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
 import { checkPasswordCorrect } from '../utils/checkPasswordCorrect.js';
+import { signJWT } from '../utils/signJWT.js';
+
+// ----------------------- Logging as Admin ----------------------------
 
 export const loginAdmin = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
@@ -16,8 +19,11 @@ export const loginAdmin = catchAsync(async (req, res, next) => {
     return next(new AppError('Incorrect email or password', 401));
   }
 
+  const token = signJWT(admin._id.toString());
+
   res.status(201).json({
     status: 'succes',
+    token,
     data: {
       admin: {
         firstName: admin.firstName,
@@ -29,6 +35,8 @@ export const loginAdmin = catchAsync(async (req, res, next) => {
   });
 });
 
+// ----------------------- Getting All Admins ----------------------------
+
 export const getAllAdmins = catchAsync(async (req, res, next) => {
   const admins = await Admin.find();
 
@@ -37,12 +45,16 @@ export const getAllAdmins = catchAsync(async (req, res, next) => {
     .json({ status: 'succes', results: admins.length, data: { admins } });
 });
 
+// ----------------------- Getting Single Admin ----------------------------
+
 export const getSingleAdmin = catchAsync(async (req, res, next) => {
   const id = req.params.adminId;
   const admin = await Admin.findById(id);
 
   res.status(200).json({ status: 'succes', data: { admin } });
 });
+
+// ----------------------- Creating Admin ----------------------------
 
 export const createAdmin = catchAsync(async (req, res, next) => {
   const adminObject = {
@@ -66,6 +78,9 @@ export const createAdmin = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+// ----------------------- Updating Admin ----------------------------
+
 export const updateAdmin = catchAsync(async (req, res, next) => {
   const id = req.params.adminId;
   const updatedAdminObj: {
@@ -90,6 +105,9 @@ export const updateAdmin = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+// ----------------------- Deleting Admin ----------------------------
+
 export const deleteAdmin = catchAsync(async (req, res, next) => {
   const id = req.params.adminId;
   const admin = await Admin.findByIdAndDelete(id);
