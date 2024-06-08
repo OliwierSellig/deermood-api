@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import fs from 'fs';
 import Product from '../src/models/productModel.ts';
 import Admin from '../src/models/adminModel.ts';
+import User from '../src/models/userModel.ts';
 import ProductCollection from '../src/models/productCollectionModel.ts';
 
 dotenv.config({ path: './config.env' });
@@ -20,12 +21,14 @@ const productCollections = JSON.parse(
   fs.readFileSync('./sample/productCollections.json', 'utf-8'),
 );
 const admins = JSON.parse(fs.readFileSync(`./sample/admins.json`, 'utf-8'));
+const users = JSON.parse(fs.readFileSync(`./sample/users.json`, 'utf-8'));
 
 // IMPORT DATA INTO DB
 const importData = async (collections: {
   products?: boolean;
   productCollections?: boolean;
   admins?: boolean;
+  users?: boolean;
 }) => {
   try {
     if (collections.products) await Product.create(products);
@@ -41,8 +44,19 @@ const importData = async (collections: {
           password: admin.password,
         };
       });
-
       await Admin.create(adminList);
+    }
+    if (collections.users) {
+      const userList = users.map((user) => {
+        return {
+          firstName: user.firstName,
+          surname: user.surname,
+          photo: user.photo,
+          email: user.email,
+          password: user.password,
+        };
+      });
+      await User.create(userList);
     }
   } catch (err) {
     console.log(err);
@@ -55,6 +69,7 @@ const deleteData = async (collections: {
   products?: boolean;
   productCollections?: boolean;
   admins?: boolean;
+  users?: boolean;
 }) => {
   try {
     if (collections.products) await Product.deleteMany();
@@ -67,6 +82,12 @@ const deleteData = async (collections: {
   process.exit();
 };
 
+if (process.argv[2] === '--import-users') {
+  importData({ users: true });
+}
+if (process.argv[2] === '--delete-users') {
+  deleteData({ users: true });
+}
 if (process.argv[2] === '--import-products') {
   importData({ products: true });
 }
@@ -80,8 +101,18 @@ if (process.argv[2] === '--delete-admins') {
   deleteData({ admins: true });
 }
 if (process.argv[2] === '--import') {
-  importData({ products: true, productCollections: true, admins: true });
+  importData({
+    products: true,
+    productCollections: true,
+    admins: true,
+    users: true,
+  });
 }
 if (process.argv[2] === '--delete') {
-  deleteData({ products: true, productCollections: true, admins: true });
+  deleteData({
+    products: true,
+    productCollections: true,
+    admins: true,
+    users: true,
+  });
 }

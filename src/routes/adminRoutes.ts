@@ -20,23 +20,16 @@ router.route('/forgotPassword').post(forgotAdminPassword);
 
 router.route('/resetPassword/:token').patch(resetAdminPassword);
 
-router.route('/updatePassword').patch(protectAdmin, updateAdminPassword);
+router.use(protectAdmin);
 
-router
-  .route('/')
-  .get(
-    (req, res, next) => {
-      next();
-    },
-    protectAdmin,
-    getAllAdmins,
-  )
-  .post(createAdmin);
+router.route('/updatePassword').patch(updateAdminPassword);
 
-router
-  .route('/:adminId')
-  .get(getSingleAdmin)
-  .patch(updateAdmin)
-  .delete(deleteAdmin);
+router.route('/updateMe').patch(updateAdmin);
+
+router.route('/deleteMe').patch(deleteAdmin);
+
+router.route('/getMyInfo').patch(getSingleAdmin);
+
+router.route('/').get(getAllAdmins).post(createAdmin);
 
 export default router;

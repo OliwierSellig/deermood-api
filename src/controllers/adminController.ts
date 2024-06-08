@@ -131,7 +131,6 @@ export const createAdmin = catchAsync(async (req, res, next) => {
 // ----------------------- Updating Admin ----------------------------
 
 export const updateAdmin = catchAsync(async (req, res, next) => {
-  const id = req.params.adminId;
   const updatedAdminObj: {
     firstName?: string;
     surname?: string;
@@ -140,10 +139,14 @@ export const updateAdmin = catchAsync(async (req, res, next) => {
   if (req.body.firstName) updatedAdminObj.firstName = req.body.firstName;
   if (req.body.surname) updatedAdminObj.surname = req.body.surname;
 
-  const updatedAdmin = await Admin.findByIdAndUpdate(id, updatedAdminObj, {
-    new: true,
-    runValidators: true,
-  });
+  const updatedAdmin = await Admin.findByIdAndUpdate(
+    req.headers.adminid,
+    updatedAdminObj,
+    {
+      new: true,
+      runValidators: true,
+    },
+  );
 
   res.status(200).json({
     status: 'success',
@@ -156,8 +159,7 @@ export const updateAdmin = catchAsync(async (req, res, next) => {
 // ----------------------- Deleting Admin ----------------------------
 
 export const deleteAdmin = catchAsync(async (req, res, next) => {
-  const id = req.params.adminId;
-  const admin = await Admin.findByIdAndDelete(id);
+  const admin = await Admin.findByIdAndDelete(req.headers.adminid);
 
   if (!admin) {
     return next(new AppError('No admin found with that ID', 404));
@@ -166,7 +168,7 @@ export const deleteAdmin = catchAsync(async (req, res, next) => {
   res.status(204).json({ status: 'succes', data: null });
 });
 
-// ----------------------- Forgoting Admin Password ----------------------------
+// ----------------------- Forgeting Admin Password ----------------------------
 
 export const forgotAdminPassword = catchAsync(async (req, res, next) => {
   const admin = await Admin.findOne({ email: req.body.email });

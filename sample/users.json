@@ -1,0 +1,37 @@
+[
+  {
+    "firstName": "Pablo",
+    "surname": "Picasso",
+    "photo": "user-1.png",
+    "email": "pablo@gmail.com",
+    "password": "test1234"
+  },
+  {
+    "firstName": "Fitz",
+    "surname": "Chevlary",
+    "photo": "user-2.png",
+    "email": "fitz@gmail.com",
+    "password": "test1234"
+  },
+  {
+    "firstName": "Elon",
+    "surname": "Musk",
+    "photo": "user-3.png",
+    "email": "elon@gmail.com",
+    "password": "test1234"
+  },
+  {
+    "firstName": "Jeff",
+    "surname": "Bezos",
+    "photo": "user-4.png",
+    "email": "jeff@gmail.com",
+    "password": "test1234"
+  },
+  {
+    "firstName": "Brandon",
+    "surname": "Sanderson",
+    "photo": "user-5.png",
+    "email": "brandon@gmail.com",
+    "password": "test1234"
+  }
+]
