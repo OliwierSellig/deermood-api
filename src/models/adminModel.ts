@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
+import crypto from 'crypto';
 
 interface IAdmin extends Document {
   firstName: string;
@@ -7,6 +8,11 @@ interface IAdmin extends Document {
   photo: string;
   email: string;
   password: string;
+  passwordChangedAt: Date;
+  passwordResetToken: string | undefined;
+  passwordResetExpires: Date | undefined;
+  createPasswordResetToken: () => string;
+  changedPasswordAfter: (JWTTimestamp: number) => boolean;
 }
 
 const adminSchema = new mongoose.Schema<IAdmin>({
@@ -36,6 +42,9 @@ const adminSchema = new mongoose.Schema<IAdmin>({
     required: [true, 'Admin must  have a password'],
     minlength: [8, 'Password must contain at least 8 characters'],
   },
+  passwordChangedAt: Date,
+  passwordResetToken: String,
+  passwordResetExpires: Date,
 });
 
 adminSchema.pre('save', async function (next) {
@@ -45,6 +54,39 @@ adminSchema.pre('save', async function (next) {
 
   next();
 });
+
+adminSchema.pre('save', function (next) {
+  if (!this.isModified('password') || this.isNew) return next();
+
+  this.passwordChangedAt = new Date(Date.now() - 1000);
+  next();
+});
+
+adminSchema.methods.changedPasswordAfter = function (JWTTimestamp: number) {
+  if (this.passwordChangedAt) {
+    const changedTimestamp = parseInt(
+      (this.passwordChangedAt.getTime() / 1000).toString(),
+      10,
+    );
+
+    return JWTTimestamp < changedTimestamp;
+  }
+
+  return false;
+};
+
+adminSchema.methods.createPasswordResetToken = function () {
+  const resetToken = crypto.randomBytes(32).toString('hex');
+
+  this.passwordResetToken = crypto
+    .createHash('sha256')
+    .update(resetToken)
+    .digest('hex');
+
+  this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+
+  return resetToken;
+};
 
 const Admin = mongoose.model('Admin', adminSchema);
 

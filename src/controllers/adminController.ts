@@ -5,11 +5,12 @@ import catchAsync from '../utils/catchAsync.js';
 import { checkPasswordCorrect } from '../utils/checkPasswordCorrect.js';
 import { signJWT } from '../utils/signJWT.js';
 import jwt, { JwtPayload, Secret } from 'jsonwebtoken';
+import { sendEmail } from '../utils/email.js';
+import crypto from 'crypto';
 
 // ----------------------- Protecting Admin Route ----------------------------
 
 export const protectAdmin = catchAsync(async (req, res, next) => {
-  console.log('Im here 😍');
   let token: string | undefined;
   if (
     req.headers?.authorization &&
@@ -36,6 +37,15 @@ export const protectAdmin = catchAsync(async (req, res, next) => {
     return next(
       new AppError(
         'The admin belonging to this token does no longer exist.',
+        401,
+      ),
+    );
+  }
+
+  if (currentAdmin.changedPasswordAfter(decoded.iat!)) {
+    return next(
+      new AppError(
+        'Admin recently changed password! Please log in again.',
         401,
       ),
     );
@@ -126,12 +136,10 @@ export const updateAdmin = catchAsync(async (req, res, next) => {
   const updatedAdminObj: {
     firstName?: string;
     surname?: string;
-    email?: string;
   } = {};
 
   if (req.body.firstName) updatedAdminObj.firstName = req.body.firstName;
   if (req.body.surname) updatedAdminObj.surname = req.body.surname;
-  if (req.body.email) updatedAdminObj.email = req.body.email;
 
   const updatedAdmin = await Admin.findByIdAndUpdate(id, updatedAdminObj, {
     new: true,
@@ -157,4 +165,68 @@ export const deleteAdmin = catchAsync(async (req, res, next) => {
   }
 
   res.status(204).json({ status: 'succes', data: null });
+});
+
+// ----------------------- Forgoting Admin Password ----------------------------
+
+export const forgotAdminPassword = catchAsync(async (req, res, next) => {
+  const admin = await Admin.findOne({ email: req.body.email });
+
+  if (!admin) {
+    return next(new AppError('No admin found with that email address', 404));
+  }
+
+  const resetToken = admin.createPasswordResetToken();
+  await admin.save({ validateBeforeSave: false });
+
+  const message = `Forgot your password, please follow this token: ${resetToken} and this link <PASTE LINK HERE> to create a new password for your account.\nIf you did not forget your password, please ignore this email!`;
+
+  try {
+    await sendEmail({
+      email: admin.email,
+      subject: 'Reset your password (Valid for 10 minutes)',
+      text: message,
+    });
+
+    res.status(200).json({ status: 'succes', message: 'Token sent to email!' });
+  } catch (err) {
+    admin.passwordResetToken = undefined;
+    admin.passwordResetExpires = undefined;
+    await admin.save({ validateBeforeSave: false });
+    console.log(err);
+    return next(
+      new AppError(
+        'There was an error sending the email. Try again later!',
+        500,
+      ),
+    );
+  }
+});
+
+// ----------------------- Reseting Admin Password ----------------------------
+
+export const resetAdminPassword = catchAsync(async (req, res, next) => {
+  const hashedToken = crypto
+    .createHash('sha256')
+    .update(req.params.token)
+    .digest('hex');
+
+  const admin = await Admin.findOne({
+    passwordResetToken: hashedToken,
+    passwordResetExpires: { $gt: Date.now() },
+  });
+
+  if (!admin) {
+    return next(new AppError('Token is invalid or has expired', 400));
+  }
+
+  admin.password = req.body.password;
+  admin.passwordResetToken = undefined;
+  admin.passwordResetExpires = undefined;
+
+  await admin.save();
+
+  const token = signJWT(admin._id.toString());
+
+  res.status(200).json({ status: 'succes', token });
 });

@@ -25,7 +25,7 @@ const productSchema = new mongoose.Schema<IProduct>({
     unique: true,
     trim: true,
     maxlength: [40, 'Product name must have less or equal then 40 characters'],
-    minlength: [8, 'Product name must have more or equal then 8 characters'],
+    minlength: [4, 'Product name must have more or equal then 4 characters'],
   },
   slug: String,
   photos: [String],
