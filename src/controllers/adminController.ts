@@ -3,10 +3,10 @@ import Admin from '../models/adminModel.js';
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
 import { checkPasswordCorrect } from '../utils/checkPasswordCorrect.js';
-import { signJWT } from '../utils/signJWT.js';
 import jwt, { JwtPayload, Secret } from 'jsonwebtoken';
 import { sendEmail } from '../utils/email.js';
 import crypto from 'crypto';
+import { createSendJWT } from '../utils/createSendJWT.js';
 
 // ----------------------- Protecting Admin Route ----------------------------
 
@@ -69,12 +69,8 @@ export const loginAdmin = catchAsync(async (req, res, next) => {
     return next(new AppError('Incorrect email or password', 401));
   }
 
-  const token = signJWT(admin._id.toString());
-
-  res.status(201).json({
-    status: 'succes',
-    token,
-    data: {
+  createSendJWT(
+    {
       admin: {
         firstName: admin.firstName,
         surname: admin.surname,
@@ -82,7 +78,10 @@ export const loginAdmin = catchAsync(async (req, res, next) => {
         photo: admin.photo,
       },
     },
-  });
+    admin._id.toString(),
+    201,
+    res,
+  );
 });
 
 // ----------------------- Getting All Admins ----------------------------
@@ -226,7 +225,40 @@ export const resetAdminPassword = catchAsync(async (req, res, next) => {
 
   await admin.save();
 
-  const token = signJWT(admin._id.toString());
+  createSendJWT(null, admin._id.toString(), 201, res);
+});
 
-  res.status(200).json({ status: 'succes', token });
+// ----------------------- Updating Admin Password ----------------------------
+
+export const updateAdminPassword = catchAsync(async (req, res, next) => {
+  const admin = await Admin.findById(req.headers.adminid).select('+password');
+
+  if (!admin) {
+    return next(new AppError('No admin found with that ID', 404));
+  }
+
+  if (!(await checkPasswordCorrect(req.body.currentPassword, admin.password))) {
+    return next(
+      new AppError(
+        'Your current password is wrong. Please provide accurate password.',
+        401,
+      ),
+    );
+  }
+
+  admin.password = req.body.newPassword;
+
+  await admin.save();
+
+  createSendJWT(
+    {
+      firstName: admin.firstName,
+      surname: admin.surname,
+      email: admin.email,
+      photo: admin.photo,
+    },
+    admin._id.toString(),
+    200,
+    res,
+  );
 });

@@ -9,6 +9,7 @@ import {
   protectAdmin,
   forgotAdminPassword,
   resetAdminPassword,
+  updateAdminPassword,
 } from '../controllers/adminController.js';
 
 const router = express.Router();
@@ -19,11 +20,12 @@ router.route('/forgotPassword').post(forgotAdminPassword);
 
 router.route('/resetPassword/:token').patch(resetAdminPassword);
 
+router.route('/updatePassword').patch(protectAdmin, updateAdminPassword);
+
 router
   .route('/')
   .get(
     (req, res, next) => {
-      console.log('Chuj');
       next();
     },
     protectAdmin,

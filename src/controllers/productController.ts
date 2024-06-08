@@ -2,7 +2,7 @@ import Product from '../models/productModel.js';
 import APIFeatures from '../utils/apiFeatures.js';
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
-import { QueryString } from '../utils/types.js';
+import { QueryString } from '../types/types.js';
 
 // ----------------------- Getting All Products ----------------------------
 

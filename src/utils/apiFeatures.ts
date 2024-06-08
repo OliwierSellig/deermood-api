@@ -1,5 +1,5 @@
 import { Query } from 'mongoose';
-import { QueryString } from './types.js';
+import { QueryString } from '../types/types.js';
 
 class APIFeatures<T extends Document> {
   public query: Query<T[], T>;
