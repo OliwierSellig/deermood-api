@@ -1,15 +1,16 @@
 import mongoose from 'mongoose';
 import { getSlug } from '../utils/getSlug.js';
+import { productGenders, productSizes } from '../types/types.js';
 
-const requiredSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+const requiredSizes: productSizes[] = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
 interface IProduct extends Document {
   name: string;
   photos: string[];
-  gender: 'male' | 'female' | 'unisex';
+  gender: productGenders;
   description: string;
   price: number;
-  sizes: { name: string; amount: number }[];
+  sizes: { name: productSizes; amount: number }[];
   materials: { name: string; amount: number }[];
   slug?: string;
   productCollection: {

@@ -4,3 +4,7 @@ export type QueryString = {
   page?: string;
   fields?: string;
 };
+
+export type productSizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL';
+
+export type productGenders = 'mens' | 'womens' | 'unisex';
