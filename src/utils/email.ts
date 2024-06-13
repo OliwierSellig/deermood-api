@@ -45,7 +45,7 @@ export class Email {
     return template(context);
   }
 
-  async send(template: string, subject: string) {
+  async send(template: string, subject: string, additionalContext?: object) {
     const handlebarOptions = {
       viewEngine: {
         extName: '.handlebars',
@@ -63,7 +63,13 @@ export class Email {
       hbs(handlebarOptions as NodemailerExpressHandlebarsOptions),
     );
 
-    const context = { name: this.name, email: this.to, url: this.url, subject };
+    const context = {
+      name: this.name,
+      email: this.to,
+      url: this.url,
+      subject,
+      ...additionalContext,
+    };
     const text = await this.compileTemplate(template, context);
 
     const mailOptions = {
@@ -80,8 +86,10 @@ export class Email {
     await transporter.sendMail(mailOptions);
   }
 
-  async sendWelcomeAdmin() {
-    await this.send('welcome', 'Welcome to the Deermood Admin Panel!');
+  async sendWelcomeAdmin(password: string) {
+    await this.send('welcome', 'Welcome to the Deermood Admin Panel!', {
+      password,
+    });
   }
 
   async sendAdminPasswordReset() {

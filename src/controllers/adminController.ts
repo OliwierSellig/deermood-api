@@ -7,6 +7,7 @@ import jwt, { JwtPayload, Secret } from 'jsonwebtoken';
 import crypto from 'crypto';
 import { createSendJWT } from '../utils/createSendJWT.js';
 import { Email } from '../utils/email.js';
+import { generate } from 'generate-password';
 
 // ----------------------- Protecting Admin Route ----------------------------
 
@@ -106,14 +107,20 @@ export const getSingleAdmin = catchAsync(async (req, res, next) => {
 // ----------------------- Creating Admin ----------------------------
 
 export const createAdmin = catchAsync(async (req, res, next) => {
+  const password = generate({ length: 16, numbers: true });
   const adminObject = {
     firstName: req.body.firstName,
     surname: req.body.surname,
     photo: req.body.photo,
     email: req.body.email,
-    password: req.body.password,
+    password,
   };
   const newAdmin = await Admin.create(adminObject);
+
+  await new Email(
+    { name: req.body.firstName, email: req.body.email },
+    'https://www.youtube.com/watch?v=9Ls3djzMUi4&t=286s',
+  ).sendWelcomeAdmin(password);
 
   res.status(201).json({
     status: 'succes',
