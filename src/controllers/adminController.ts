@@ -4,9 +4,9 @@ import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
 import { checkPasswordCorrect } from '../utils/checkPasswordCorrect.js';
 import jwt, { JwtPayload, Secret } from 'jsonwebtoken';
-import { sendEmail } from '../utils/email.js';
 import crypto from 'crypto';
 import { createSendJWT } from '../utils/createSendJWT.js';
+import { Email } from '../utils/email.js';
 
 // ----------------------- Protecting Admin Route ----------------------------
 
@@ -177,17 +177,17 @@ export const forgotAdminPassword = catchAsync(async (req, res, next) => {
     return next(new AppError('No admin found with that email address', 404));
   }
 
-  const resetToken = admin.createPasswordResetToken();
+  // const resetToken = admin.createPasswordResetToken();
   await admin.save({ validateBeforeSave: false });
 
-  const message = `Forgot your password, please follow this token: ${resetToken} and this link <PASTE LINK HERE> to create a new password for your account.\nIf you did not forget your password, please ignore this email!`;
-
   try {
-    await sendEmail({
-      email: admin.email,
-      subject: 'Reset your password (Valid for 10 minutes)',
-      text: message,
-    });
+    await new Email(
+      {
+        name: admin.firstName,
+        email: admin.email,
+      },
+      '/https://www.youtube.com/watch?v=9Ls3djzMUi4&t=286s',
+    ).sendAdminPasswordReset();
 
     res.status(200).json({ status: 'succes', message: 'Token sent to email!' });
   } catch (err) {

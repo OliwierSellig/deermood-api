@@ -2,11 +2,17 @@ import Order from '../models/orderModel.js';
 import User from '../models/userModel.js';
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
+import { Email } from '../utils/email.js';
 
 // ----------------------- Getting All Users ----------------------------
 
 export const getAllUsers = catchAsync(async (req, res, next) => {
   const users = await User.find();
+
+  await new Email(
+    { name: 'Oliwier', email: 'oliwierandrzej.sellig@gmail.com' },
+    '/',
+  ).sendWelcomeAdmin();
 
   res
     .status(200)
