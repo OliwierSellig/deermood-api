@@ -5,6 +5,7 @@ import collectionRouter from './routes/productCollectionRoutes.js';
 import adminRouter from './routes/adminRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
 import userRouter from './routes/userRoutes.js';
+import themeRouter from './routes/themeRouters.js';
 import AppError from './utils/appError.js';
 import globalErrorHandler from './controllers/erorrController.js';
 
@@ -27,6 +28,8 @@ app.use('/api/v1/admins', adminRouter);
 app.use('/api/v1/orders', orderRouter);
 
 app.use('/api/v1/users', userRouter);
+
+app.use('/api/v1/themes', themeRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

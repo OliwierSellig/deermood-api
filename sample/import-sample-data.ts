@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import fs from 'fs';
 import Product from '../src/models/productModel.ts';
 import Admin from '../src/models/adminModel.ts';
+import Theme from '../src/models/themeModel.ts';
 import User from '../src/models/userModel.ts';
 import Order from '../src/models/orderModel.ts';
 import ProductCollection from '../src/models/productCollectionModel.ts';
@@ -24,6 +25,7 @@ const productCollections = JSON.parse(
 const admins = JSON.parse(fs.readFileSync(`./sample/admins.json`, 'utf-8'));
 const users = JSON.parse(fs.readFileSync(`./sample/users.json`, 'utf-8'));
 const orders = JSON.parse(fs.readFileSync(`./sample/orders.json`, 'utf-8'));
+const themes = JSON.parse(fs.readFileSync(`./sample/themes.json`, 'utf-8'));
 
 // IMPORT DATA INTO DB
 const importData = async (collections: {
@@ -32,6 +34,7 @@ const importData = async (collections: {
   admins?: boolean;
   users?: boolean;
   orders?: boolean;
+  themes?: boolean;
 }) => {
   try {
     if (collections.products) await Product.create(products);
@@ -64,6 +67,7 @@ const importData = async (collections: {
     if (collections.orders) {
       await Order.create(orders);
     }
+    if (collections.themes) await Theme.create(themes);
   } catch (err) {
     console.log(err);
   }
@@ -77,6 +81,7 @@ const deleteData = async (collections: {
   admins?: boolean;
   users?: boolean;
   orders?: boolean;
+  themes?: boolean;
 }) => {
   try {
     if (collections.products) await Product.deleteMany();
@@ -85,6 +90,7 @@ const deleteData = async (collections: {
     if (collections.orders) {
       await Order.deleteMany();
     }
+    if (collections.themes) await Theme.deleteMany();
     console.log('Data successfully deleted!');
   } catch (err) {
     console.log(err);
@@ -97,6 +103,12 @@ if (process.argv[2] === '--import-orders') {
 }
 if (process.argv[2] === '--delete-orders') {
   deleteData({ orders: true });
+}
+if (process.argv[2] === '--import-themes') {
+  importData({ themes: true });
+}
+if (process.argv[2] === '--delete-themes') {
+  deleteData({ themes: true });
 }
 if (process.argv[2] === '--import-users') {
   importData({ users: true });

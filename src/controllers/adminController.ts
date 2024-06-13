@@ -155,6 +155,10 @@ export const updateAdmin = catchAsync(async (req, res, next) => {
     },
   );
 
+  if (!updatedAdmin) {
+    return next(new AppError('No admin found with that ID', 404));
+  }
+
   res.status(200).json({
     status: 'success',
     data: {
