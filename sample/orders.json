@@ -1,0 +1,289 @@
+[
+  {
+    "fullPrice": 149.97,
+    "deliveryCost": 9.99,
+    "discount": {
+      "code": "SUMMER21",
+      "percentValue": 20
+    },
+    "finalPrice": 127.96,
+    "orderDate": "2024-06-13T10:00:00Z",
+    "deliveryStatus": "packed",
+    "deliveryStatusHistory": {
+      "orderPlaced": {
+        "isCompleted": true,
+        "complitionDate": "2024-06-12T09:00:00Z"
+      },
+      "productPicked": {
+        "isCompleted": true,
+        "complitionDate": "2024-06-12T12:00:00Z"
+      },
+      "orderPacked": {
+        "isCompleted": true,
+        "complitionDate": "2024-06-13T08:00:00Z"
+      },
+      "shipped": {
+        "isCompleted": false
+      },
+      "delivered": {
+        "isCompleted": false
+      }
+    },
+    "customer": {
+      "firstName": "Pablo",
+      "surname": "Picasso",
+      "email": "pablo@gmail.com",
+      "photo": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGUlMjBmYWNlfGVufDB8fDB8fHww",
+      "id": "66641e7b57c821213d150660",
+      "address": "123 Main St, Anytown, USA",
+      "phone": 1234567890
+    },
+    "products": [
+      {
+        "name": "Eco-Friendly Bamboo T-Shirt",
+        "slug": "eco-friendly-bamboo-t-shirt",
+        "gender": "unisex",
+        "size": "M",
+        "price": 49.99,
+        "quantity": 2,
+        "photo": ""
+      },
+      {
+        "name": "Organic Cotton Hoodie",
+        "slug": "organic-cotton-hoodie",
+        "gender": "womens",
+        "size": "L",
+        "price": 49.99,
+        "quantity": 1,
+        "photo": ""
+      }
+    ]
+  },
+  {
+    "fullPrice": 89.98,
+    "deliveryCost": 7.99,
+    "discount": {
+      "code": "WINTER21",
+      "percentValue": 15
+    },
+    "finalPrice": 84.77,
+    "orderDate": "2024-01-15T14:00:00Z",
+    "deliveryStatus": "shipped",
+    "deliveryStatusHistory": {
+      "orderPlaced": {
+        "isCompleted": true,
+        "complitionDate": "2024-01-14T09:00:00Z"
+      },
+      "productPicked": {
+        "isCompleted": true,
+        "complitionDate": "2024-01-14T12:00:00Z"
+      },
+      "orderPacked": {
+        "isCompleted": true,
+        "complitionDate": "2024-01-15T08:00:00Z"
+      },
+      "shipped": {
+        "isCompleted": true,
+        "complitionDate": "2024-01-15T10:00:00Z"
+      },
+      "delivered": {
+        "isCompleted": false
+      }
+    },
+    "customer": {
+      "firstName": "Fitz",
+      "surname": "Chevlary",
+      "email": "fitz@gmail.com",
+      "photo": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGUlMjBmYWNlfGVufDB8fDB8fHww",
+      "id": "66641e7b57c821213d150660",
+      "address": "123 Main St, Anytown, USA",
+      "phone": 1234567890
+    },
+    "products": [
+      {
+        "name": "Recycled Polyester Jacket",
+        "slug": "recycled-polyester-jacket",
+        "gender": "unisex",
+        "size": "L",
+        "price": 59.99,
+        "quantity": 1,
+        "photo": ""
+      },
+      {
+        "name": "Hemp Linen Pants",
+        "slug": "hemp-linen-pants",
+        "gender": "mens",
+        "size": "M",
+        "price": 29.99,
+        "quantity": 1,
+        "photo": ""
+      }
+    ]
+  },
+  {
+    "fullPrice": 119.97,
+    "deliveryCost": 8.99,
+    "finalPrice": 128.96,
+    "orderDate": "2024-03-20T11:00:00Z",
+    "deliveryStatus": "delivered",
+    "deliveryStatusHistory": {
+      "orderPlaced": {
+        "isCompleted": true,
+        "complitionDate": "2024-03-18T09:00:00Z"
+      },
+      "productPicked": {
+        "isCompleted": true,
+        "complitionDate": "2024-03-18T12:00:00Z"
+      },
+      "orderPacked": {
+        "isCompleted": true,
+        "complitionDate": "2024-03-19T08:00:00Z"
+      },
+      "shipped": {
+        "isCompleted": true,
+        "complitionDate": "2024-03-19T10:00:00Z"
+      },
+      "delivered": {
+        "isCompleted": true,
+        "complitionDate": "2024-03-20T11:00:00Z"
+      }
+    },
+    "customer": {
+      "firstName": "Elon",
+      "surname": "Musk",
+      "email": "elon@gmail.com",
+      "photo": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGUlMjBmYWNlfGVufDB8fDB8fHww",
+      "id": "66641e7b57c821213d150660",
+      "address": "123 Main St, Anytown, USA",
+      "phone": 1234567890
+    },
+    "products": [
+      {
+        "name": "Organic Cotton T-Shirt",
+        "slug": "organic-cotton-t-shirt",
+        "gender": "mens",
+        "size": "M",
+        "price": 19.99,
+        "quantity": 3,
+        "photo": ""
+      },
+      {
+        "name": "Recycled Plastic Sunglasses",
+        "slug": "recycled-plastic-sunglasses",
+        "gender": "unisex",
+        "size": "M",
+        "price": 29.99,
+        "quantity": 1,
+        "photo": ""
+      }
+    ]
+  },
+  {
+    "fullPrice": 74.97,
+    "deliveryCost": 5.99,
+    "discount": {
+      "code": "ECOLOVER",
+      "percentValue": 10
+    },
+    "finalPrice": 72.47,
+    "orderDate": "2024-05-22T16:00:00Z",
+    "deliveryStatus": "shipped",
+    "deliveryStatusHistory": {
+      "orderPlaced": {
+        "isCompleted": true,
+        "complitionDate": "2024-05-21T09:00:00Z"
+      },
+      "productPicked": {
+        "isCompleted": true,
+        "complitionDate": "2024-05-21T12:00:00Z"
+      },
+      "orderPacked": {
+        "isCompleted": true,
+        "complitionDate": "2024-05-22T08:00:00Z"
+      },
+      "shipped": {
+        "isCompleted": true,
+        "complitionDate": "2024-05-22T10:00:00Z"
+      },
+      "delivered": {
+        "isCompleted": false
+      }
+    },
+    "customer": {
+      "firstName": "Jeff",
+      "surname": "Bezos",
+      "email": "jeff@gmail.com",
+      "photo": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGUlMjBmYWNlfGVufDB8fDB8fHww",
+      "id": "66641e7b57c821213d150660",
+      "address": "123 Main St, Anytown, USA",
+      "phone": 1234567890
+    },
+    "products": [
+      {
+        "name": "Bamboo Yoga Pants",
+        "slug": "bamboo-yoga-pants",
+        "gender": "womens",
+        "size": "S",
+        "price": 24.99,
+        "quantity": 2,
+        "photo": ""
+      },
+      {
+        "name": "Organic Cotton Tank Top",
+        "slug": "organic-cotton-tank-top",
+        "gender": "unisex",
+        "size": "M",
+        "price": 24.99,
+        "quantity": 1,
+        "photo": ""
+      }
+    ]
+  },
+  {
+    "fullPrice": 49.99,
+    "deliveryCost": 4.99,
+    "finalPrice": 54.98,
+    "orderDate": "2024-04-10T09:00:00Z",
+    "deliveryStatus": "packed",
+    "deliveryStatusHistory": {
+      "orderPlaced": {
+        "isCompleted": true,
+        "complitionDate": "2024-04-09T09:00:00Z"
+      },
+      "productPicked": {
+        "isCompleted": true,
+        "complitionDate": "2024-04-09T12:00:00Z"
+      },
+      "orderPacked": {
+        "isCompleted": true,
+        "complitionDate": "2024-04-10T08:00:00Z"
+      },
+      "shipped": {
+        "isCompleted": false
+      },
+      "delivered": {
+        "isCompleted": false
+      }
+    },
+    "customer": {
+      "firstName": "Brandon",
+      "surname": "Sanderson",
+      "email": "brandon@gmail.com",
+      "photo": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGUlMjBmYWNlfGVufDB8fDB8fHww",
+      "id": "66641e7b57c821213d150660",
+      "address": "123 Main St, Anytown, USA",
+      "phone": 1234567890
+    },
+    "products": [
+      {
+        "name": "Recycled Wool Scarf",
+        "slug": "recycled-wool-scarf",
+        "gender": "unisex",
+        "size": "L",
+        "price": 49.99,
+        "quantity": 1,
+        "photo": ""
+      }
+    ]
+  }
+]

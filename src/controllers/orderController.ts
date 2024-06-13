@@ -26,7 +26,7 @@ export const gettAllOrders = catchAsync(async (req, res, next) => {
 
 export const getSingleOrder = catchAsync(async (req, res, next) => {
   const id = req.params.id;
-  const order = Order.findById(id);
+  const order = await Order.findById(id);
 
   if (!order) {
     return next(new AppError('No Order found with that ID', 404));

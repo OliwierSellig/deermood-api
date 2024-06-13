@@ -30,12 +30,12 @@ interface IOrder extends Document {
     orderPlaced: OrderStatusStage;
     productPicked: OrderStatusStage;
     orderPacked: OrderStatusStage;
-    sipped: OrderStatusStage;
+    shipped: OrderStatusStage;
     delivered: OrderStatusStage;
   };
   customer: {
     firstName: string;
-    surName: string;
+    surname: string;
     email: string;
     photo?: string;
     id?: mongoose.Schema.Types.ObjectId;
@@ -49,6 +49,7 @@ interface IOrder extends Document {
     size: productSizes;
     price: number;
     quantity: number;
+    photo?: string;
   }[];
 }
 
@@ -62,10 +63,9 @@ const orderSchema = new mongoose.Schema<IOrder>({
     required: [true, 'Order must have a delivery cost.'],
   },
   discount: {
-    code: { type: String, required: [true, 'Discount must hava code.'] },
+    code: String,
     percentValue: {
       type: Number,
-      required: [true, 'Discount must have a percent value.'],
       max: [100, 'Discount value must be equal or less than 100%'],
       min: [1, 'Discount value must be equal or more than 1%'],
     },
@@ -86,7 +86,7 @@ const orderSchema = new mongoose.Schema<IOrder>({
     orderPlaced: deliveryStatusObj,
     productPicked: deliveryStatusObj,
     orderPacked: deliveryStatusObj,
-    sipped: deliveryStatusObj,
+    shipped: deliveryStatusObj,
     delivered: deliveryStatusObj,
   },
   customer: {
@@ -94,7 +94,7 @@ const orderSchema = new mongoose.Schema<IOrder>({
       type: String,
       required: [true, 'Customer must have a first name.'],
     },
-    surName: {
+    surname: {
       type: String,
       required: [true, 'Customer must have a surname.'],
     },
@@ -114,6 +114,7 @@ const orderSchema = new mongoose.Schema<IOrder>({
     {
       name: { type: String, required: [true, 'Product must have a name.'] },
       slug: { type: String, required: [true, 'Product must have a slug.'] },
+      photo: String,
       gender: {
         type: String,
         required: [true, 'Product must have a gender.'],

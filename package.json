@@ -13,7 +13,9 @@
     "deleteAdmins": "tsx sample/import-sample-data.ts --delete-admins",
     "refetchAdmins": "tsx sample/import-sample-data.ts --import-admins",
     "deleteUsers": "tsx sample/import-sample-data.ts --delete-users",
-    "refetchUsers": "tsx sample/import-sample-data.ts --import-users"
+    "refetchUsers": "tsx sample/import-sample-data.ts --import-users",
+    "deleteOrders": "tsx sample/import-sample-data.ts --delete-orders",
+    "refetchOrders": "tsx sample/import-sample-data.ts --import-orders"
   },
   "author": "Oliwier Sellig",
   "license": "ISC",

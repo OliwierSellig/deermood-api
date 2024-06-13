@@ -4,6 +4,7 @@ import fs from 'fs';
 import Product from '../src/models/productModel.ts';
 import Admin from '../src/models/adminModel.ts';
 import User from '../src/models/userModel.ts';
+import Order from '../src/models/orderModel.ts';
 import ProductCollection from '../src/models/productCollectionModel.ts';
 
 dotenv.config({ path: './config.env' });
@@ -22,6 +23,7 @@ const productCollections = JSON.parse(
 );
 const admins = JSON.parse(fs.readFileSync(`./sample/admins.json`, 'utf-8'));
 const users = JSON.parse(fs.readFileSync(`./sample/users.json`, 'utf-8'));
+const orders = JSON.parse(fs.readFileSync(`./sample/orders.json`, 'utf-8'));
 
 // IMPORT DATA INTO DB
 const importData = async (collections: {
@@ -29,6 +31,7 @@ const importData = async (collections: {
   productCollections?: boolean;
   admins?: boolean;
   users?: boolean;
+  orders?: boolean;
 }) => {
   try {
     if (collections.products) await Product.create(products);
@@ -58,6 +61,9 @@ const importData = async (collections: {
       });
       await User.create(userList);
     }
+    if (collections.orders) {
+      await Order.create(orders);
+    }
   } catch (err) {
     console.log(err);
   }
@@ -70,11 +76,15 @@ const deleteData = async (collections: {
   productCollections?: boolean;
   admins?: boolean;
   users?: boolean;
+  orders?: boolean;
 }) => {
   try {
     if (collections.products) await Product.deleteMany();
     if (collections.productCollections) await ProductCollection.deleteMany();
     if (collections.admins) await Admin.deleteMany();
+    if (collections.orders) {
+      await Order.deleteMany();
+    }
     console.log('Data successfully deleted!');
   } catch (err) {
     console.log(err);
@@ -82,6 +92,12 @@ const deleteData = async (collections: {
   process.exit();
 };
 
+if (process.argv[2] === '--import-orders') {
+  importData({ orders: true });
+}
+if (process.argv[2] === '--delete-orders') {
+  deleteData({ orders: true });
+}
 if (process.argv[2] === '--import-users') {
   importData({ users: true });
 }
