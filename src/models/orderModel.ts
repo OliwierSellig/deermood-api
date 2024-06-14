@@ -67,7 +67,7 @@ const orderSchema = new mongoose.Schema<IOrder>({
     percentValue: {
       type: Number,
       max: [100, 'Discount value must be equal or less than 100%'],
-      min: [1, 'Discount value must be equal or more than 1%'],
+      min: [1, 'Discount value must be equal or greater than 1%'],
     },
   },
   finalPrice: {

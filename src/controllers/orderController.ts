@@ -9,7 +9,7 @@ import {
 
 // ----------------------- Factory Functions ------------------------------
 
-export const gettAllOrders = getAll(Order);
+export const getAllOrders = getAll(Order);
 
 export const getSingleOrder = getOne(Order, 'order');
 
