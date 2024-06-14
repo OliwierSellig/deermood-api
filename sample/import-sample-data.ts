@@ -7,6 +7,8 @@ import Theme from '../src/models/themeModel.ts';
 import User from '../src/models/userModel.ts';
 import Order from '../src/models/orderModel.ts';
 import ProductCollection from '../src/models/productCollectionModel.ts';
+import AnnouncmentBar from '../src/models/announcmentBarModel.ts';
+import DiscountCode from '../src/models/discountCodeModel.ts';
 
 dotenv.config({ path: './config.env' });
 
@@ -26,6 +28,10 @@ const admins = JSON.parse(fs.readFileSync(`./sample/admins.json`, 'utf-8'));
 const users = JSON.parse(fs.readFileSync(`./sample/users.json`, 'utf-8'));
 const orders = JSON.parse(fs.readFileSync(`./sample/orders.json`, 'utf-8'));
 const themes = JSON.parse(fs.readFileSync(`./sample/themes.json`, 'utf-8'));
+const bars = JSON.parse(fs.readFileSync(`./sample/bars.json`, 'utf-8'));
+const discounts = JSON.parse(
+  fs.readFileSync(`./sample/discounts.json`, 'utf-8'),
+);
 
 // IMPORT DATA INTO DB
 const importData = async (collections: {
@@ -34,7 +40,7 @@ const importData = async (collections: {
   admins?: boolean;
   users?: boolean;
   orders?: boolean;
-  themes?: boolean;
+  features?: boolean;
 }) => {
   try {
     if (collections.products) await Product.create(products);
@@ -67,7 +73,11 @@ const importData = async (collections: {
     if (collections.orders) {
       await Order.create(orders);
     }
-    if (collections.themes) await Theme.create(themes);
+    if (collections.features) {
+      await Theme.create(themes);
+      await AnnouncmentBar.create(bars);
+      await DiscountCode.create(discounts);
+    }
   } catch (err) {
     console.log(err);
   }
@@ -81,7 +91,7 @@ const deleteData = async (collections: {
   admins?: boolean;
   users?: boolean;
   orders?: boolean;
-  themes?: boolean;
+  features?: boolean;
 }) => {
   try {
     if (collections.products) await Product.deleteMany();
@@ -90,7 +100,11 @@ const deleteData = async (collections: {
     if (collections.orders) {
       await Order.deleteMany();
     }
-    if (collections.themes) await Theme.deleteMany();
+    if (collections.features) {
+      await Theme.deleteMany();
+      await AnnouncmentBar.deleteMany();
+      await DiscountCode.deleteMany();
+    }
     console.log('Data successfully deleted!');
   } catch (err) {
     console.log(err);
@@ -104,11 +118,11 @@ if (process.argv[2] === '--import-orders') {
 if (process.argv[2] === '--delete-orders') {
   deleteData({ orders: true });
 }
-if (process.argv[2] === '--import-themes') {
-  importData({ themes: true });
+if (process.argv[2] === '--import-features') {
+  importData({ features: true });
 }
-if (process.argv[2] === '--delete-themes') {
-  deleteData({ themes: true });
+if (process.argv[2] === '--delete-features') {
+  deleteData({ features: true });
 }
 if (process.argv[2] === '--import-users') {
   importData({ users: true });

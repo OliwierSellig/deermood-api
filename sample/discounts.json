@@ -1,0 +1,27 @@
+[
+  {
+    "code": "ECOFRIENDLY10",
+    "isActive": true,
+    "discountValue": 10
+  },
+  {
+    "code": "SAVE20NOW",
+    "isActive": true,
+    "discountValue": 20
+  },
+  {
+    "code": "GREENSALE5",
+    "isActive": false,
+    "discountValue": 5
+  },
+  {
+    "code": "SUSTAIN15",
+    "isActive": false,
+    "discountValue": 15
+  },
+  {
+    "code": "NATURE30",
+    "isActive": false,
+    "discountValue": 30
+  }
+]
