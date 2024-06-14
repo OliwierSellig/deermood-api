@@ -7,6 +7,7 @@ interface ITheme extends Document {
   buttonContent: string;
   buttonUrl: string;
   image: string;
+  active: boolean;
 }
 
 const themeSchema = new mongoose.Schema<ITheme>({
@@ -23,6 +24,10 @@ const themeSchema = new mongoose.Schema<ITheme>({
   buttonUrl: {
     type: String,
     required: [true, 'Theme Button must have an URL'],
+  },
+  active: {
+    type: Boolean,
+    required: [true, 'Theme must have an activity status'],
   },
   image: String,
 });

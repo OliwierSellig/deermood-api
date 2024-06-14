@@ -5,6 +5,7 @@
     "description": "Welcome sunny season with easy, breezy summer looks. Our collection of effortless dresses will have you looking as put together as ever, even though it's as simple as throw-on-and-go.",
     "buttonContent": "Shop Dresses",
     "buttonUrl": "/",
+    "active": true,
     "image": ""
   },
   {
@@ -13,6 +14,7 @@
     "description": "Discover our range of eco-friendly basics that provide ultimate comfort. Crafted from sustainable materials, these pieces are perfect for everyday wear and gentle on the planet.",
     "buttonContent": "Shop Basics",
     "buttonUrl": "/",
+    "active": false,
     "image": ""
   },
   {
@@ -21,6 +23,7 @@
     "description": "Experience the softness and purity of our organic cotton collection. Ethically sourced and beautifully designed, these items are a touch of nature you can wear.",
     "buttonContent": "Shop Organic Cotton",
     "buttonUrl": "/",
+    "active": true,
     "image": ""
   },
   {
@@ -29,6 +32,7 @@
     "description": "Embrace the timeless elegance of our linen wear. Perfect for any occasion, these pieces are breathable, stylish, and sustainable, ensuring you look and feel great.",
     "buttonContent": "Shop Linen Wear",
     "buttonUrl": "/",
+    "active": false,
     "image": ""
   },
   {
@@ -37,6 +41,7 @@
     "description": "Our recycled fabric fashion line combines style with sustainability. Each piece is made from recycled materials, helping you make a positive impact on the environment.",
     "buttonContent": "Shop Recycled Fabric",
     "buttonUrl": "/",
+    "active": false,
     "image": ""
   }
 ]
