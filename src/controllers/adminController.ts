@@ -8,6 +8,13 @@ import crypto from 'crypto';
 import { createSendJWT } from '../utils/createSendJWT.js';
 import { Email } from '../utils/email.js';
 import { generate } from 'generate-password';
+import { getAll, getOne } from './handlerFactory.js';
+
+// ----------------------- Factory Functions ---------------------------------
+
+export const getAllAdmins = getAll(Admin);
+
+export const getSingleAdmin = getOne(Admin, 'admin');
 
 // ----------------------- Protecting Admin Route ----------------------------
 
@@ -83,25 +90,6 @@ export const loginAdmin = catchAsync(async (req, res, next) => {
     201,
     res,
   );
-});
-
-// ----------------------- Getting All Admins ----------------------------
-
-export const getAllAdmins = catchAsync(async (req, res, next) => {
-  const admins = await Admin.find();
-
-  res
-    .status(200)
-    .json({ status: 'succes', results: admins.length, data: { admins } });
-});
-
-// ----------------------- Getting Single Admin ----------------------------
-
-export const getSingleAdmin = catchAsync(async (req, res, next) => {
-  const id = req.params.adminId;
-  const admin = await Admin.findById(id);
-
-  res.status(200).json({ status: 'succes', data: { admin } });
 });
 
 // ----------------------- Creating Admin ----------------------------

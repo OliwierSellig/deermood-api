@@ -1,74 +1,20 @@
 import Product from '../models/productModel.js';
-import APIFeatures from '../utils/apiFeatures.js';
-import AppError from '../utils/appError.js';
-import catchAsync from '../utils/catchAsync.js';
-import { QueryString } from '../types/types.js';
+import {
+  creaetOne,
+  deleteOne,
+  getAll,
+  getOne,
+  updateOne,
+} from './handlerFactory.js';
 
-// ----------------------- Getting All Products ----------------------------
+// ----------------------- Factory Functions ------------------------------
 
-export const getAllProducts = catchAsync(async (req, res, next) => {
-  const queryString = req.query as unknown as QueryString;
+export const getAllProducts = getAll(Product);
 
-  const features = new APIFeatures(Product.find(), queryString)
-    .filter()
-    .sort()
-    .limitFields()
-    .paginate();
+export const getSingleProduct = getOne(Product, 'product');
 
-  const products = await features.query;
-  res
-    .status(200)
-    .json({ status: 'success', results: products.length, data: { products } });
-});
+export const createProduct = creaetOne(Product);
 
-// ----------------------- Getting Single Product ----------------------------
+export const updateProduct = updateOne(Product, 'product');
 
-export const getSingleProduct = catchAsync(async (req, res, next) => {
-  const id = req.params.id;
-  const product = await Product.findById(id);
-
-  if (!product) {
-    return next(new AppError('No product found with that ID', 404));
-  }
-
-  res.status(200).json({ status: 'succes', data: { product } });
-});
-
-// ----------------------- Creating Product ----------------------------
-
-export const createProduct = catchAsync(async (req, res, next) => {
-  const newProduct = await Product.create(req.body);
-
-  res.status(201).json({ status: 'succes', data: { newProduct } });
-});
-
-// ----------------------- Updating Product ----------------------------
-
-export const updateProduct = catchAsync(async (req, res, next) => {
-  const id = req.params.id;
-  const product = await Product.findByIdAndUpdate(id, req.body, {
-    new: true,
-    runValidators: true,
-  });
-
-  if (!product) {
-    return next(new AppError('No product found with that ID', 404));
-  }
-
-  res.status(200).json({ status: 'succes', data: { product } });
-});
-
-// ----------------------- Deleting Product ----------------------------
-
-export const deleteProduct = catchAsync(async (req, res, next) => {
-  const id = req.params.id;
-  const product = await Product.findByIdAndDelete(id);
-  if (!product) {
-    return next(new AppError('No product found with that ID', 404));
-  }
-
-  res.status(204).json({
-    status: 'success',
-    data: null,
-  });
-});
+export const deleteProduct = deleteOne(Product, 'product');
