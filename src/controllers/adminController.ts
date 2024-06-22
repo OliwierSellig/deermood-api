@@ -92,6 +92,16 @@ export const loginAdmin = catchAsync(async (req, res, next) => {
   );
 });
 
+// ----------------------- Logging out Admin -------------------------
+
+export const logoutAdmin = catchAsync(async (req, res, next) => {
+  res.cookie('jwt', 'loggedout', {
+    expires: new Date(Date.now() + 10 * 1000),
+    httpOnly: true,
+  });
+  res.status(200).json({ status: 'success' });
+});
+
 // ----------------------- Creating Admin ----------------------------
 
 export const createAdmin = catchAsync(async (req, res, next) => {

@@ -10,11 +10,14 @@ import {
   forgotAdminPassword,
   resetAdminPassword,
   updateAdminPassword,
+  logoutAdmin,
 } from '../controllers/adminController.js';
 
 const router = express.Router();
 
 router.route('/login').post(loginAdmin);
+
+router.route('/logout').get(logoutAdmin);
 
 router.route('/forgotPassword').post(forgotAdminPassword);
 
