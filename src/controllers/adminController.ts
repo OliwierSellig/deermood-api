@@ -186,16 +186,17 @@ export const forgotAdminPassword = catchAsync(async (req, res, next) => {
     return next(new AppError('No admin found with that email address', 404));
   }
 
-  // const resetToken = admin.createPasswordResetToken();
+  const resetToken = admin.createPasswordResetToken();
   await admin.save({ validateBeforeSave: false });
 
   try {
+    const resetURL = `http://localhost:3001/reset-password/${resetToken}`;
     await new Email(
       {
         name: admin.firstName,
         email: admin.email,
       },
-      '/https://www.youtube.com/watch?v=9Ls3djzMUi4&t=286s',
+      resetURL,
     ).sendAdminPasswordReset();
 
     res.status(200).json({ status: 'succes', message: 'Token sent to email!' });
@@ -203,7 +204,6 @@ export const forgotAdminPassword = catchAsync(async (req, res, next) => {
     admin.passwordResetToken = undefined;
     admin.passwordResetExpires = undefined;
     await admin.save({ validateBeforeSave: false });
-    console.log(err);
     return next(
       new AppError(
         'There was an error sending the email. Try again later!',
