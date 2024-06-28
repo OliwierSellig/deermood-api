@@ -59,6 +59,8 @@ export const protectAdmin = catchAsync(async (req, res, next) => {
     );
   }
 
+  req.adminId = currentAdmin?._id.toString();
+
   next();
 });
 
@@ -136,6 +138,7 @@ export const createAdmin = catchAsync(async (req, res, next) => {
 // ----------------------- Updating Admin ----------------------------
 
 export const updateAdmin = catchAsync(async (req, res, next) => {
+  const adminId = req.adminId;
   const updatedAdminObj: {
     firstName?: string;
     surname?: string;
@@ -144,14 +147,10 @@ export const updateAdmin = catchAsync(async (req, res, next) => {
   if (req.body.firstName) updatedAdminObj.firstName = req.body.firstName;
   if (req.body.surname) updatedAdminObj.surname = req.body.surname;
 
-  const updatedAdmin = await Admin.findByIdAndUpdate(
-    req.headers.adminid,
-    updatedAdminObj,
-    {
-      new: true,
-      runValidators: true,
-    },
-  );
+  const updatedAdmin = await Admin.findByIdAndUpdate(adminId, updatedAdminObj, {
+    new: true,
+    runValidators: true,
+  });
 
   if (!updatedAdmin) {
     return next(new AppError('No admin found with that ID', 404));
