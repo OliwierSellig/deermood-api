@@ -86,6 +86,7 @@ export const loginAdmin = catchAsync(async (req, res, next) => {
         surname: admin.surname,
         email: admin.email,
         photo: admin.photo,
+        createdAt: admin.createdAt,
       },
     },
     admin._id.toString(),

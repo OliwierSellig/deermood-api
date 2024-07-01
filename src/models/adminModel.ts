@@ -7,6 +7,7 @@ interface IAdmin extends Document {
   surname: string;
   photo: string;
   email: string;
+  createdAt: Date;
   password: string;
   passwordChangedAt: Date;
   passwordResetToken: string | undefined;
@@ -27,6 +28,10 @@ const adminSchema = new mongoose.Schema<IAdmin>({
     required: [true, 'Admin must have a surname'],
   },
   photo: String,
+  createdAt: {
+    type: Date,
+    required: [true, 'Admin must have a creation date'],
+  },
   email: {
     type: String,
     unique: true,

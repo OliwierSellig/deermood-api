@@ -54,6 +54,7 @@ const importData = async (collections: {
           photo: admin.photo,
           email: admin.email,
           password: admin.password,
+          createdAt: admin.createdAt,
         };
       });
       await Admin.create(adminList);
